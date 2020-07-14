@@ -31,13 +31,13 @@
 .sentence-chn
 {
 	font-family:楷体,微软雅黑,黑体;
-	font-size:17px;
+	font-size:20px;
 }
 /*英文*/
 .sentence-eng
 {
 	font-family:Consolas,"Courier New",Courier;
-	font-size:17px;
+	font-size:20px;
 }
 /*目录*/
 #menu
@@ -47,7 +47,7 @@
 	padding-top:8px;
 	padding-bottom:40px;
 	/****4.0.0 2020-05-06更新*/
-	background-color:rgba(255,255,255,.90);
+	background-color:rgba(255,155,255,.90);
 	box-shadow: 1px 1px 5px rgba(136,136,136,.70);
 	/****结束*/
 	font-size:20px;
