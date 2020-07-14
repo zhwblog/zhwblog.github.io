@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>首页 - Kevin 的博客 | 呃呃呃！</title>
+	<title>首页 - OIstream 的博客 | 每一行代码都是改变世界的一份能量！</title>
 	<meta charset="utf-8">
 	<!-- 以下为导入 4.x 版本配套的 CSS，为了兼容 3.x 请使用不加 -v4 的 CSS-->
 	<link rel="stylesheet" type="text/css" href="./style/allcss-v4.css">
@@ -10,46 +10,48 @@
 	<!-- font-awesome 图标库-->
 	<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
 	<!-- -->
+	
 	<link rel="icon" type="image/ico" href="./img/!icon-bird.ico"/>
 	<script>
 		function showSentence ()
 		{
 			var sent = new Array()
-			sent[0] = "千夫之诺诺，不如一士之谔谔。"
-			sent[1] = "玩GE"
-			sent[2] = "stO Ots"
+			sent[0] = "千夫之诺诺，不如一士之谔谔。——《史记·商君列传第八》"
+			sent[1] = "但你出言不逊是！——@语文王子"
+			sent[2] = "stO frost_walker"
 			sent[3] = "stO 屏幕前的大巨佬"
 			sent[5] = "这里我把红黑树简写为RB（当然是Red and Blue）——@向北方"
-			sent[6] = "yxxcxk!!!"
+			sent[6] = "如果你封了我，会让全天下的oiers知道，洛谷管理员的腐朽！！！洛谷将会臭名昭著！——@Unknown_Error"
 			sent[7] = "不出 10 分钟必能 AC"
 			sent[8] = "今天的 AKer 必然是你"
 			sent[9] = "出现 2147483648"
 			sent[10] = "虐全场"
-			//sent[4] = "gmq"
-			//sent[5] = "观猴"
-			//sent[6] = "考古"
 			sent[11] = "5k 代码毫无 bug"
 			sent[4] = "我是蒟蒻！"
-			sent[12] = "被无数人 黑"
+			sent[12] = "被无数人 star"
 			sent[13] = "被人追着 %"
-			//sent[8] = "我太弱了"
-			//sent[9] = "你 AK 了 CSP"
+			sent[14] = "轻松飞越珠峰"
+			sent[15] = "误判率几乎为0"
+			sent[16] = "被无数人三连"
 			var good = new Array()
 			good[0] = "谔谔"
 			good[1] = "出言不逊"
 			good[2] = "膜拜"
 			good[3] = "切题"
-			good[4] = "玩GE"
+			good[4] = "吊打"
 			good[5] = "看神贴"
 			good[6] = "考古"
 			good[7] = "调试"
 			good[8] = "打比赛"
 			good[9] = "玩2048"
-			good[10] = "玩 splix.io"
+			good[10] = "玩 diep.io"
 			good[11] = "开发"
 			good[12] = "上 Github"
-			good[13] = "hhh"
-			var num = Math.floor( Math.random() * 14)
+			good[13] = "水犇犇"
+			good[14] = "GE 模拟飞行"
+			good[15] = "玩 splix.io"
+			good[16] = "上B站"
+			var num = Math.floor( Math.random() * 17)
 			var rp = Math.floor( Math.random() * 101)
 			document.getElementById("sentence").innerHTML = sent[num]
 			document.getElementById("good").innerHTML = good[num]
@@ -59,7 +61,18 @@
 		{
              return (Array(n).join(0) + num).slice(-n);
 		}
-
+		function showImg ()
+		{
+			var imgs=new Array()
+			imgs[0]="./x/7foj.png"
+			imgs[1]="./x/diep.png"
+			imgs[2]="./x/oistream.png"
+			imgs[3]="./x/luogu.png"
+			imgs[4]="./x/loj.png"
+			imgs[5]="./x/vijos.png"
+			var num = Math.floor( Math.random() * 6)
+			document.getElementById("imgToShow").src = imgs[num]
+		}
 	</script>
 </head>
 <body>
@@ -68,7 +81,7 @@
 	<!--
 	<div class="floatLeft">
 	<div class="line">
-	<div class="logo"><a href=""><strong style="font-size:27px;">Kevin 的博客</strong></a></div>
+	<div class="logo"><a href=""><strong style="font-size:27px;">OIstream 的博客</strong></a></div>
 	<strong><a href="./blog/aboutme.html"  target="_blank" style="font-size:17px;"><i class="fa fa-user"></i>&nbsp;关于我</a></strong>
 	</div>
 	</div>
@@ -77,14 +90,15 @@
 	<strong><a href="./blog/index.html"  target="_blank" class="lis"><i class="fa fa-rss"></i>&nbsp;博客</a></strong>
 	<strong><a href="./class/index.html"  target="_blank" class="lis"><i class="fa fa-book"></i>&nbsp;知识</a></strong>
 	<strong><a href="./live/index.html"  target="_blank" class="lis"><i class="fa fa-comments"></i>&nbsp;动态</a></strong>
-
+	<strong><a href="./live/index.html"  target="_blank" class="lis"><i class="fa fa-pencil"></i>&nbsp;练习</a></strong>
+	<strong><a href="./dev/index.html"  target="_blank" class="lis"><i class="fa fa-code"></i>&nbsp;Develop</a></strong>
 	</div>
 	-->
 	<script src="./script/showMenu.js"></script>
 	</div>
 	<!--
 	<div id="header">
-	<div class="logo"><strong style="font-size:40px;">Kevin 的博客</strong></div>
+	<div class="logo"><strong style="font-size:40px;">OIstream 的博客</strong></div>
 	<br/>
 	<script src="./script/showHeader.js"></script>
 	</div>
@@ -102,8 +116,8 @@
 	<div class="line" style="padding:5px;">
 	<div id="main">
 	<div id="notice">
-	&nbsp; <strong>通知:</strong><br/>
-	<p>最近本博客将会进行一次大的更新！
+	<i class="fa fa-info"></i> &nbsp; <strong>动态</strong>&nbsp;&nbsp;<small><i class="fa fa-clock-o"></i>&nbsp;2020-07-12 14:23</small><br/>
+	<p>近期计划：搞好评论系统、代码高亮、在主页做个随机生成对应网址的二维码，如您想让自己的网址出现在生成的二维码中，欢迎联系我（其实就是友链了qaq）</p>
 	</div>
 	<div id="blog">
 		<h2 class="center"><i class="fa fa-calendar-o"></i>&nbsp;最新博文</h2>
@@ -118,32 +132,60 @@
 			</div>
 		</div>-->
 	</div>
-	<a href="./blog/article/solution-p1503/index.html">
+	<a href="./blog/article/blog-v4-test/index.html">
 		<div class="blogItem">
-		
-	</a>
-	<a href="./blog/article/aboutme/index.html">
-	<div class="blogItem">
-	<span class="h">关于我</span>
-	<br/>
-	<br/>
-	<small><i class="fa fa-tag"></i> 其他 | 关于我&nbsp;&nbsp;<i class="fa fa-book"></i> 其他&nbsp;&nbsp;<i class="fa fa-clock-o"></i> 2020-03-01 08:00&nbsp;&nbsp;<i class="fa fa-check-square-o"></i> 2020-03-01 08:00&nbsp;&nbsp;<i class="fa fa-file"></i> Text</small>
-	<br/>
-	<br/>
-	<span>我是谁？我在干什么？</span>
-	</div>
-	</a>
-				<a href="./blog/article/blog-v4-test/index.html">
-	<div class="blogItem">
-	<span class="h">新版博客测试</span>
-	<br/>
-	<br/>
-					<small><i class="fa fa-tag"></i> 测试&nbsp;&nbsp;<i class="fa fa-book"></i> 其它&nbsp;&nbsp;<i class="fa fa-clock-o"></i> 2020-05-16 14:32&nbsp;&nbsp;<i class="fa fa-check-square-o"></i> 2020-05-16 14:32&nbsp;&nbsp;<i class="fa fa-file"></i> C++</small>
-	<br/>
-	<br/>
-	<span>快来看看新版博客长什么样吧！</span>
-	</div>
-	</a>
+		<span class="h">「置顶」新版博客测试</span>
+		<br/>
+		<br/>
+						<small><i class="fa fa-angle-double-up"></i> <i class="fa fa-tag"></i> 测试&nbsp;&nbsp;<i class="fa fa-book"></i> 其它&nbsp;&nbsp;<i class="fa fa-clock-o"></i> 2020-05-16 14:32&nbsp;&nbsp;<i class="fa fa-check-square-o"></i> 2020-05-16 14:32&nbsp;&nbsp;<i class="fa fa-file"></i> C++</small>
+		<br/>
+		<br/>
+		<span>快来看看新版博客长什么样吧！</span>
+		</div>
+		</a>
+		<a href="./blog/article/solution-p1879/index.html">
+			<div class="blogItem">
+			<span class="h">「题解」USACO2006NOV-Gold Corn Fields</span>
+			<br/>
+			<br/>
+			<small><i class="fa fa-tag"></i> 题解&nbsp;&nbsp;<i class="fa fa-book"></i> OI | 算法 | 动态规划 | 状态压缩动态规划&nbsp;&nbsp;<i class="fa fa-clock-o"></i> 2020-07-11 22:23&nbsp;&nbsp;<i class="fa fa-check-square-o"></i> 2020-07-11 22:23&nbsp;&nbsp;<i class="fa fa-file"></i> C++</small>			<br/>
+			<br/>
+			<span>状态压缩动态规划。降低维度。</span>
+			</div>
+			</a>
+		<a href="./blog/article/acsl-2019-2020-note/index.html">
+			<div class="blogItem">
+			<span class="h">ACSL 2019-2020 游记</span>
+			<br/>
+			<br/>
+			<small><i class="fa fa-tag"></i> 游记&nbsp;&nbsp;<i class="fa fa-book"></i> 赛事 | ACSL&nbsp;&nbsp;<i class="fa fa-clock-o"></i> 2020-07-10 11:18&nbsp;&nbsp;<i class="fa fa-check-square-o"></i> 2020-07-10 11:18&nbsp;&nbsp;<i class="fa fa-file"></i> Text</small>
+			<br/>
+			<br/>
+			<span>ACSL 考些啥？这个比赛又是什么样？</span>
+			</div>
+			</a>
+		<a href="./blog/article/note-matrix/index.html">
+			<div class="blogItem">
+			<span class="h">矩阵</span>
+			<br/>
+			<br/>
+			<small><i class="fa fa-tag"></i> 笔记&nbsp;&nbsp;<i class="fa fa-book"></i> 离散数学 | 矩阵&nbsp;&nbsp;<i class="fa fa-clock-o"></i> 2020-07-06 20:18&nbsp;&nbsp;<i class="fa fa-check-square-o"></i> 2020-07-06 20:18&nbsp;&nbsp;<i class="fa fa-file"></i> Text</small>
+			<br/>
+			<br/>
+			<span>矩阵的基础知识。</span>
+			</div>
+			</a>
+	<a href="./blog/article/solution-p3377/index.html">
+		<div class="blogItem">
+		<span class="h">「题解」洛谷 P3377【模板】左偏树（可并堆）</span>
+		<br/>
+		<br/>
+		<small><i class="fa fa-tag"></i> 题解&nbsp;&nbsp;<i class="fa fa-book"></i> OI | 数据结构 | 可并堆 | 左偏树&nbsp;&nbsp;<i class="fa fa-clock-o"></i> 2020-06-13 15:43&nbsp;&nbsp;<i class="fa fa-check-square-o"></i> 2020-06-13 15:43&nbsp;&nbsp;<i class="fa fa-file"></i> C++</small>
+		<br/>
+		<br/>
+		<span>可并堆模板题。我遇到的一些 bug 及解决思路。</span>
+		</div>
+		</a>
 	<!--
 	<div id="blog">
 		<h2 class="center"><i class="fa fa-comment"></i>&nbsp;最新动态</h2>
@@ -159,6 +201,26 @@
 	<div class="OInewsPicNew">
 		<a href="./blog/oinews/2/index.html"><img width="100%" src="./blog/oinews/2/幻灯片1.jpg"></a>
 	</div>
+	<div id="lbGitalk">
+		<!-- 导入Gitalk 支持文件-->
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+	<!---->
+		<div id="gitalk-container"></div>    <script type="text/javascript">
+    var gitalk = new Gitalk({
+
+    // gitalk的主要参数
+        clientID: '2c00a1a3c7fe31cced9d',
+        clientSecret: '41a9cd57f80a33bb41d8a498ddd53e488097b3ab',
+        repo: 'zxp2019.github.io',
+        owner: 'zxp2019',
+        admin: ['zxp2019'],
+        id:window.location.pathname,
+
+    });
+    gitalk.render('gitalk-container');
+</script>   
+</div>
 	</div>
 	
 	<div id="side">
@@ -167,9 +229,24 @@
 			<img src="./img/!icon-bird.png" class="circle" width="200" height="200"/>
 			<br/>
 			<div style="font-size:20px;">
-			<i class="fa fa-envelope-o"></i> <a href="mailto:kevinzhw153@126.com">kevinzhw153@126.com</a>
+			<i class="fa fa-envelope-o"></i> <a href="mailto:zxp1863@163.com">zxp1863@163.com</a>
 			<br/>
+			洛谷 <a href="https://www.luogu.com.cn/user/180720/">zxp_oistream</a>
+			<br/>
+			LibreOJ <a href="https://loj.ac/user/18624/">oistream</a>
+			<br/>
+			<i class="fa fa-github"></i> <a href="https://github.com/zxp2019/">zxp2019</a>
 			</div>
+		</div>
+		<div class="rightdiv">
+			<h2><i class="fa fa-map-signs"></i>&nbsp;今天去哪儿</h2>
+			<br/>
+			<img id="imgToShow" src="./x/default.png"/>
+			<br/>
+			<br/>
+			<button type="button" onclick="showImg()" class="button" style="width:100px;height:33px;background-color:#FF9933;border:1px solid #FF9933;"><i class="fa fa-flash"></i>&nbsp;&nbsp;手气不错</button>
+			<br/>
+			<pre class="small">以上信息仅供娱乐！</pre>
 		</div>
 		<div class="rightdiv">
 			<h2><i class="fa fa-calendar-check-o"></i>&nbsp;打卡区</h2>
@@ -208,10 +285,24 @@
 			<br/>
 			<pre class="small">以上信息仅供娱乐！</pre>
 		</div>
-		
 		<div class="rightdiv">
-			<h2><i class="fa fa-star"></i>&nbsp;项目</h2>
-			Wikipedia@<a href="https://zh.wikipediazh.workers.dev/zh-cn/">中文维基镜像</a> | Wikipedia@<a href="https://en.wikipediazh.workers.dev">英文维基镜像</a> | Wikicommon@<a href="https://commons.wikipediazh.workers.dev">维基共享资源镜像</a>
+			<h2><i class="fa fa-link"></i>&nbsp;友链</h2>
+			<a href="https://gmq12.github.io">frost_walker6</a> | Luogu@<a href="https://www.luogu.com.cn/user/132929">frost_walker</a> | Github@<a href="https://github.com/gmq12">gmq12</a>
+			<br/>
+			<br/>
+			Luogu@<a href="https://www.luogu.com.cn/user/131109">robin_gao</a> | Codeforces@<a href="https://codeforces.com/profile/grobcj">grobcj</a>
+			<br/>
+			<br/>
+			Github@<a href="https://github.com/a-stranger-from-outerspace">A-stranger-from-outerspace</a> | Luogu@<a href="https://www.luogu.com.cn/user/130724">来自外WTK的路人</a> | Bilibili@<a href="https://space.bilibili.com/416540337">来自外太空的路人</a> | LiberOj@ <a href ="https://loj.ac/user/19322">A_stranger_from_outerspace</a>
+			<br/>
+			<br/>
+			<a href="https://www.xiaozhi.xin">小智编程</a>
+			<br/>
+			<br/>
+		</div>
+		<div class="rightdiv">
+			<h2><i class="fa fa-star"></i>&nbsp;光荣榜</h2>
+			Github@<a href="https://github.com/a-stranger-from-outerspace">A-stranger-from-outerspace</a> | Luogu@<a href="https://www.luogu.com.cn/user/130724">来自WTK的路人</a> | Bilibili@<a href="https://space.bilibili.com/416540337">来自外太空的路人</a> | LiberOj@ <a href ="https://loj.ac/user/19322">A_stranger_from_outerspace</a>（提出了博客的若干问题以及建议，甚至看不下去了，亲自帮助修改了一些，包括这条[doge]）
 			<br/>
 			<br/>
 		</div>
