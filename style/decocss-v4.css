@@ -8,17 +8,17 @@
 .hpnews
 {
 	border:1px solid red;
-	border-radius:1%;
+	border-radius:2%;
 }
 /*圆形图片*/
 .circle
 {
-	border:1px solid blue;
+	border:2px solid blue;
 	border-radius:75%;
 }
 /*按钮*/
 .button
-{border-radius:.25rem;}
+{border-radius:.30rem;}
 /*缩小字体*/
 .small
 {font-size:10px;color:#A0A0A0;}
@@ -26,12 +26,12 @@
 {
 	color:black;
 	font-family: 'Microsoft Yahei Light';
-	padding-left:15px;
+	padding-left:20px;
 	padding-right:15px;
-	padding-top:10px;
-	padding-bottom:10px;
+	padding-top:13px;
+	padding-bottom:13px;
 	margin:10px;
-	background-color:rgb(250, 250, 250);
+	background-color:rgb(188,188,188);
 	border-left:2px solid #86CAFB;
 }
 /*删除线*/
