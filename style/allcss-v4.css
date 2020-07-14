@@ -1,8 +1,8 @@
 body
 {
-	margin-left:5px;
-	margin-right:5px;
-	margin-top:5px;
+	margin-left:0px;
+	margin-right:0px;
+	margin-top:0px;
 	margin-bottom:0px;
 	border-style:none;
 	outline-style:none;
@@ -10,7 +10,7 @@ body
 	padding-right:0em;
 	padding-bottom:0em;
 	padding-top:0em;
-	background-color:rgb(154,122,112)/*#000000*/;
+	background-color:rgb(232,232,232)/*#000000*/;
 }
 div
 {
@@ -28,15 +28,15 @@ div
 /*普通段落*/
 p
 {
-	line-height:110%;
+	line-height:120%;
 	text-decoration:none;
-	text-indent:30px;
+	text-indent:25px;
 }
 /*粗体*/
 strong
 {
-	line-height:140%;
-	text-indent:36px;
+	line-height:120%;
+	text-indent:25px;
 }
 /*链接*/
 a
@@ -45,19 +45,19 @@ a
 }
 a:link
 {
-	color:#FFFFFF;
+	color:#3399FF;
 }
 a:visited
 {
-	color:#FFFFFF;
+	color:#3399FF;
 }
 a:hover
 {
-	color:#3333FF;
+	color:#FFFFFF;
 }
 a:active
 {
-	color:#3333FF;
+	color:#FFFFFF;
 }
 h1
 {
