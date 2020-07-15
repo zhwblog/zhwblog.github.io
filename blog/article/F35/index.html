@@ -403,7 +403,25 @@ BAE系统总裁麦可·透纳抗议美国拒绝让他公司取得此飞机的源
 			<p align="left"><img src="./f35-9.jpg" width="350" height="200" /></p>		<p align="right"><img src="./f35-10.png" width="350" height="200" /></p>
                                         <p>
 					</p>
-					
+							<!-- 导入Gitalk 支持文件-->
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+		<div id="gitalk-container"></div>    <script type="text/javascript">
+    var gitalk = new Gitalk({
+
+    // gitalk的主要参数
+        clientID: 'eed41000fac47e08548c',
+        clientSecret: 'b80b3ff52443a5e950b0dbc7fba8bfbdd6732732',
+        repo: 'kevinzhw153.github.io/blog/article/F35',
+        owner: 'kevinzhw153',
+        admin: ['kevinzhw153'],
+        id:window.location.pathname,
+
+    });
+    gitalk.render('gitalk-container');
+</script>  
+</div>
 					<div id="footer">
 	<br/>
 	<script src="../../../script/showFooter.js"></script>
