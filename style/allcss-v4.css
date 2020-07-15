@@ -10,14 +10,14 @@ body
 	padding-right:0em;
 	padding-bottom:0em;
 	padding-top:0em;
-	background-color:rgb(232,232,232)/*#000000*/;
+	background-color:rgb(215,215,0)/*#000000*/;
 }
 div
 {
-	margin-left:0px;
-	margin-right:0px;
+	margin-left:1px;
+	margin-right:1px;
 	margin-top:0px;
-	margin-bottom:0px;
+	margin-bottom:1px;
 	border-style:none;
 	outline-style:none;
 	padding-left:0em;
@@ -45,7 +45,7 @@ a
 }
 a:link
 {
-	color:#3399FF;
+	color:#F2AF82;
 }
 a:visited
 {
