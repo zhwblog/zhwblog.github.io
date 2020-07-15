@@ -93,7 +93,7 @@
 /*右侧边栏*/
 #side
 {
-	width:25%;
+	width:30%;
 	margin:10px;
 }
 /*OI 周报*/
@@ -133,7 +133,7 @@
 /*脚部*/
 #footer
 {
-	text-align:center;background-color:rgb(32,32,32);height:60px;
+	text-align:center;background-color:rgb(32,32,32);height:50px;
 }
 /*左侧边栏列表*/
 #divlist
