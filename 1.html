@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+		<script>
+			var index = 0;
+			var i=0;
+			
+			/**
+			 * 对时间进行预先处理，逢60进一
+			 */
+			function counter(){
+				second = index;
+				minute=i;
+				index++;
+				if(second==60){
+					second=0;
+					i++;
+					index=0;
+				}
+				if(second<10){
+					second = "0"+second;
+				}
+				if(minute<10){
+					minute="0"+minute;
+				}
+				return time = minute +":"+second;
+			}
+			
+			/**
+			 * 将获得的时间插入到div的区域
+			 */
+			function show(){
+				var time = counter();
+				document.getElementsByTagName("div")[0].innerHTML=time;
+			}
+			
+			/**
+			 * 每秒钟获得一次时间，实现计数功能
+			 */
+			function set(){
+				setInterval("show()",1000);
+			}
+			
+			show();
+			set();
+		</script>
+	</body>
+</html>
