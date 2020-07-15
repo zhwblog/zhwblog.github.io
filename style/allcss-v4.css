@@ -19,7 +19,7 @@ div
 	margin-top:0px;
 	margin-bottom:1px;
 	border-style:none;
-	outline-style:none;
+	outline-style:dashed;
 	padding-left:0em;
 	padding-right:0em;
 	padding-bottom:0em;
@@ -28,7 +28,7 @@ div
 /*普通段落*/
 p
 {
-	line-height:120%;
+	line-height:125%;
 	text-decoration:none;
 	text-indent:25px;
 }
@@ -53,7 +53,7 @@ a:visited
 }
 a:hover
 {
-	color:#FFFFFF;
+	color:#66cccc;
 }
 a:active
 {
