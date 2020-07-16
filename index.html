@@ -14,52 +14,6 @@
 	       
         <link rel="icon" type="image/ico" href="./img/!icon-bird.ico"/>
 	
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      transition: inherit;
-    }
-
-    body {
-      width: 100vw;
-      height: 100vh;
-      font-size: 3em;
-      padding: 30px;
-      transition: 2s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #34495e;
-      color: #34495e;
-    }
-
-    span {
-      font: bold;
-    }
-  </style>
-
-
-  <h1>lawsssscat.com</h1>
-  <span>hd</span>
-
-<script>
-  function Color(elem) {
-    this.elem = elem
-    this.colors = ['#f1c40f', '#2ecc71', '#e74c3c', '#9b59b6'];
-    this.run = function (target = 'background') {
-      setInterval(() => {
-        let i = Math.floor(Math.random() * this.colors.length)
-        this.elem.style[target] = this.colors[i];
-      }, 1000)
-    }
-  }
-  new Color(document.body).run();
-  let h1 = new Color(document.querySelector('h1'))
-  h1.run();
-  h1.run('color')
-</script>
-
 	<script>
 		function showSentence ()
 		{
