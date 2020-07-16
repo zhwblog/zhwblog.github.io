@@ -8,11 +8,11 @@
 	border:1px solid red;
 	border-radius:1%;
 }
-/*圆形图片*/
+/*图片*/
 .triangle
 {
-	border:1px solid blue;
-	border-radius:75%;
+	border:1px solid red;
+	border-radius:50%;
 }
 /*按钮*/
 .button
