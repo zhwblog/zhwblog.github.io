@@ -223,7 +223,7 @@
 	padding-bottom:30px;
 	padding-left:15px;
 	padding-right:15px;
-	background-color:white;
+	background-color:blue;
 	color:rgba(0,0,0,.70);
 	border-radius:.5rem;
 	box-shadow: 1px 1px 5px rgba(136,136,136,.70);
@@ -253,14 +253,14 @@
 }
 #lbGitalk
 {
-	background-color:rgba(255,255,255);
-	padding-top:40px;
-	padding-bottom:40px;
+	background-color:rgba(191,191,191);
+	padding-top:30px;
+	padding-bottom:30px;
 	padding-left:40px;
 	padding-right:40px;
 	margin:10px;border-radius:.5rem;
 	box-shadow: 1px 1px 5px rgba(136,136,136,.70);
-	color:black;
+	color:blue;
 }
 #lbGitalk p
 {
