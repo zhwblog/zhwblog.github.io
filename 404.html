@@ -1,38 +1,58 @@
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>出错了 - Kevin 的博客 | 呃呃呃！</title>
-	<!-- font-awesome 图标库-->
-	<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-	<!-- -->
-</head>
-<body style="background-color:rgba(0,0,0,.85);color:white;">
-	<div style="margin-left:29%;margin-right:29%;margin-top:15%;margin-bottom:15%;">
-		<div style="display:flex;justify-content:center;">
-				<div style="width:40%;text-align:center;">
-					<span style="font-size:200px;"><i class="fa fa-exclamation-circle"></i></span>
-					<strong style="font-size:75px;">404!</strong>
-				</div>
-				<div style="width:60%;">
-					<span style="font-size:52px;">谔谔，这个页面找不到了...</span>
-					<br/>
-					<br/>
-					<strong>如果你是自己来到这的...</strong>
-					<br/>
-					<span>请检查网址拼写是否正确。</span>
-					<br/>
-					<br/>
-					<strong>如果你是点击超链接来到这的...</strong>
-					<br/>
-					<span>此超链接存在问题。</span>
+<!DOCTYPE html>
+<html lang="en">
 
-				</div>
-		</div>
-		<div style="text-align:center;color:white;width:100%;margin:10px;">
-			<button style="font-size:17px;width:150px;height:50px;color:white;border-radius:.25rem;border:3px solid white;background-color:rgba(0,0,0,.85)" onclick="javascript:location.href='http://zxp2019.github.io/';">
-				<i class="fa fa-home"></i>&nbsp;回到首页
-			</button>
-		</div>
-	</div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      transition: inherit;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      font-size: 3em;
+      padding: 30px;
+      transition: 2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #34495e;
+      color: #34495e;
+    }
+
+    span {
+      font: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>lawsssscat.com</h1>
+  <span>hd</span>
 </body>
+<script>
+  function Color(elem) {
+    this.elem = elem
+    this.colors = ['#f1c40f', '#2ecc71', '#e74c3c', '#9b59b6'];
+    this.run = function (target = 'background') {
+      setInterval(() => {
+        let i = Math.floor(Math.random() * this.colors.length)
+        this.elem.style[target] = this.colors[i];
+      }, 1000)
+    }
+  }
+  new Color(document.body).run();
+  let h1 = new Color(document.querySelector('h1'))
+  h1.run();
+  h1.run('color')
+</script>
+
 </html>
+————————————————
+版权声明：本文为CSDN博主「LawssssCat」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/LawssssCat/java/article/details/104510529
