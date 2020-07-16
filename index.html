@@ -14,37 +14,6 @@
 	       
         <link rel="icon" type="image/ico" href="./img/!icon-bird.ico"/>
 	
-<script type="text/javascript">
-var arr = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
-//获取随机颜色的值
-function getColor(){
-	var color = "#";
-	for(i=0;i<6;i++){
-		var c = parseInt(Math.random()*16);
-		c = arr[c];
-		color = color + c;
-	}
-	return color;
-}
-//改变文本的颜色
-function changeColor(id){
-	id.style.color = getColor();
-}
-//改变单行的颜色
-function changeSingleLineColor(line){
-	line.style.backgroundColor = getColor();
-}
-//改变页面背景色
-function changeBgColor(){
-	document.bgColor = getColor();
-}
- 
-//改变文本和单行颜色，需将调用对象本身传进函数，而改变页面北京颜色则不用传递参数，直接使用document对象。
-</script>
- 
-<p onClick="changeColor(this)" align="center"><font size="+6"><b>no road of flowers leads to glory.</b></font></p>
-<p onClick="changeSingleLineColor(this)" align="center">改变单行颜色</p>
-<p onClick="changeBgColor()" align="right">改变页面背景颜色</p>
 
 	<script>
 		function showSentence ()
