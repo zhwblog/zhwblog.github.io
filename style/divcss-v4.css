@@ -267,11 +267,11 @@
 	color:black;
 	text-indent:0em;
 	line-height:1.5em;
-	letter-spacing:.5em;
+	letter-spacing:.20em;
 }
 #lbGitalk pre
 {
-	color:black;
+	color:green;
 }
 #longBlog
 {
