@@ -10,7 +10,7 @@ baseurl: ""      # 这个我们不用填写
 # Sidebar settings
 sidebar: true                           # 是否开启侧边栏.
 sidebar-about-description: "test"
-sidebar-avatar:/img/!bridge.jpg    
+sidebar-avatar:./img/!bridge.jpg    
 # SNS settings
 RSS: false
 weibo_username:     
