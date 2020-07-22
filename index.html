@@ -28,6 +28,30 @@
 </script>
 
 	
+<style>
+	 
+        span { background:yellow; }
+</style>
+<script>
+    window.onload=function(){
+        var inp=document.getElementsByTagName("input");
+        var oP=document.getElementById("box");
+ 
+        inp[1].onclick=function(){
+            var str = inp[0].value;
+            if (!str)return; //若内容不存在即返回
+            oP.innerHTML=oP.innerHTML.split(str).join('<span>'+str+'</span>')
+        }
+    };
+ 
+</script>
+</head>
+ 
+<body>
+ 
+<input type="text" />
+    <input type="button" value="查找" />
+	
         <link rel="icon" type="image/ico" href="./img/!icon-bird.ico"/>
 	<script>
 		function showSentence ()
