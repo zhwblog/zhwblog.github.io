@@ -25,21 +25,7 @@
 
   gtag('config', 'UA-173251435-1');
 </script>
-        <link rel="icon" type="image/ico" href="./img/!icon-bird.ico"/>
-	
-	<script>
-    <%
-        // 获取IP
-        String ip = request.getRemoteAddr();
- 
-        // 获取时间
-        String data = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date());
-    %>
-    <%-- 使用表达式语言进行输出 --%>
-    <h2>您的IP地址为：<%=ip%></h2>
-    <h2>本次访问时间：<%=data%></h2>
-</script>
-	
+        <link rel="icon" type="image/ico" href="./img/!icon-bird.ico"/>	
 	<script>
 		function showSentence ()
 		{
@@ -309,7 +295,19 @@
 			
 			<br/>
 			<br/>
-		</div>		
+		</div>
+			<script>
+    <%
+        // 获取IP
+        String ip = request.getRemoteAddr();
+ 
+        // 获取时间
+        String data = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date());
+    %>
+    <%-- 使用表达式语言进行输出 --%>
+    <h2>您的IP地址为：<%=ip%></h2>
+    <h2>本次访问时间：<%=data%></h2>
+</script>
 		<!--upd 0716 今日更新至此-->
 	</div>
 	</div>	
