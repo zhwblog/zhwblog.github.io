@@ -27,31 +27,53 @@
   gtag('config', 'UA-173251435-1');
 </script>
 
-	
-<style>
-	 
-        span { background:yellow; }
-</style>
-<script>
-    window.onload=function(){
-        var inp=document.getElementsByTagName("input");
-        var oP=document.getElementById("box");
- 
-        inp[1].onclick=function(){
-            var str = inp[0].value;
-            if (!str)return; //若内容不存在即返回
-            oP.innerHTML=oP.innerHTML.split(str).join('<span>'+str+'</span>')
-        }
-    };
- 
-</script>
-</head>
- 
-<body>
- 
-<input type="text" />
-    <input type="button" value="查找" />
-	
+    <div id="showView">
+    </div>
+ <nav id="nav" class="navbar navbar-expand-md navbar-light fixed-top bg-white">
+        <img src="asset/images/L.jpg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">主页</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">分类</a>
+                    <div id="nav-list-1" class="dropdown-menu border-white" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="#">机器学习</a>
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a data-id="label-nav" class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">标签</a>
+                    <div id="nav-list-2" class="dropdown-menu border-white" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="#">机器学习</a>
+                        <a class="dropdown-item" href="#">Tensorflow</a>
+                        <a class="dropdown-item" href="#">Python</a>
+                        <a class="dropdown-item" href="#">学习笔记</a>
+                        <a class="dropdown-item" href="#">神经网络</a>
+                        <a class="dropdown-item" href="#">深度学习</a>
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">时间轴</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index_dark_theme.html">夜间模式</a>
+                </li>
+            </ul>
+
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2 border-white" type="text" placeholder="Search" aria-label="Search" id="inputSearch" oninput="query(this)">
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+
+
         <link rel="icon" type="image/ico" href="./img/!icon-bird.ico"/>
 	<script>
 		function showSentence ()
