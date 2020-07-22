@@ -258,9 +258,9 @@
 	padding-bottom:40px;
 	padding-left:40px;
 	padding-right:40px;
-	margin:10px;border-radius:.5rem;
+	margin:10px;border-radius:.3em;
 	box-shadow: 1px 1px 5px rgba(136,136,136,.70);
-	color:black;
+	color:gray;
 }
 
         .gt-ico-text, .gt-btn-text {
