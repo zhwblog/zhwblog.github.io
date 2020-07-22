@@ -10,7 +10,7 @@ baseurl: ""      # 这个我们不用填写
 # Sidebar settings
 sidebar: true                           # 是否开启侧边栏.
 sidebar-about-description: "test"
-sidebar-avatar:/img/!bridge.jpg     # 你的个人头像 这里你可以改成我在img文件夹中的两张备用照片 img/avatar-m 或 avatar-g
+sidebar-avatar:/img/!bridge.jpg    
 # SNS settings
 RSS: false
 weibo_username:     
