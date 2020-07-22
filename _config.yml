@@ -1,0 +1,40 @@
+# Site settings
+title: Kevin的博客
+email: kevinzhw153@126.com
+description: > # this means to ignore newlines until "baseurl:"
+  Kevin的博客
+baseurl: "" #	 the subpath of your site, e.g. /blog/
+url: http://yansu.org # the base hostname & protocol for your site
+rss_url: 
+author: Kevin
+
+# Sidebar filter
+# Choose 'tag' or 'category' as filter in sidebar.
+filter: 'category'
+recent_num: 20
+
+# Social account
+twitter: 
+weibo: 
+github: kevinzhw153
+ 
+# avatar and Favicon
+avatar: http://imgs.yansu.org/site-avatar.png
+favicon: http://imgs.yansu.org/site-favicon.ico
+
+# disqus config
+# disqus:
+#  shortname: kevin
+
+# google analytics config
+# ga:
+#  id: UA-173251435-1
+#  url: kevinzhw153.github.io
+
+# Build settings
+permalink: /:year/:month/:day/:title.html
+markdown: kramdown
+highlighter: rouge
+mathjax: disabled
+sass:
+  style: compressed
