@@ -9,7 +9,6 @@
 	<link rel="stylesheet" type="text/css" href="./style/allcss-v4.css">
 	<link rel="stylesheet" type="text/css" href="./style/divcss-v4.css">
 	<link rel="stylesheet" type="text/css" href="./style/decocss-v4.css">
-        <link rel="stylesheet" href=".particles.js-2.0.0/demo/css/style.css">
 	<!-- font-awesome 图标库-->
 	<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
 	<!-- -->
@@ -296,41 +295,7 @@
 			
 			<br/>
 			<br/>
-		</div>
-		
-		<!-- count particles -->
-<div class="count-particles">
-  <span class="js-count-particles">--</span> 
-</div>
-
-<div id="particles-js"></div>
-
-<!-- scripts -->
-<script src="./demo/particles.js"></script>
-<script src="./demo/js/app.js"></script>
-
-<!-- stats.js -->
-<script src="./demo/js/lib/stats.js"></script>
-<script>
-  var count_particles, stats, update;
-  stats = new Stats;
-  stats.setMode(0);
-  stats.domElement.style.position = 'absolute';
-  stats.domElement.style.left = '0px';
-  stats.domElement.style.top = '0px';
-  document.body.appendChild(stats.domElement);
-  count_particles = document.querySelector('.js-count-particles');
-  update = function() {
-    stats.begin();
-    stats.end();
-    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-    }
-    requestAnimationFrame(update);
-  };
-  requestAnimationFrame(update);
-</script>
-		
+		</div>		
 		<!--upd 0716 今日更新至此-->
 	</div>
 	</div>	
