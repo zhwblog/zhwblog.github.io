@@ -25,8 +25,14 @@
 
   gtag('config', 'UA-173251435-1');
 </script>
-	
-	<script src="./search.html"></script>
+
+	<div id="app">
+    <input type="text" placeholder="请输入您需要查询的内容" v-model="search">
+    <button v-on:click="searchCont">Search</button>
+    <ul>
+        <li v-for="item in listSearch">{{item}}</li>
+    </ul>
+</div>
 	<script src="./vue.js"></script>
 	
         <link rel="icon" type="image/ico" href="./img/!icon-bird.ico"/>	
