@@ -29,47 +29,80 @@
 	<script src="./src.html"></script>
 
         <link rel="icon" type="image/ico" href="./img/!icon-bird.ico"/>	
-
-<?php the_content(); ?>
-
-<form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
-    <div style="text-align: left; padding-top: 10px;">
-        <label for="tougao_authorname">昵称:*</label>
-        <input type="text" size="40" value="" id="tougao_authorname" name="tougao_authorname" />
-    </div>
-
-    <div style="text-align: left; padding-top: 10px;">
-        <label for="tougao_authoremail">E-Mail:*</label>
-        <input type="text" size="40" value="" id="tougao_authoremail" name="tougao_authoremail" />
-    </div>
-                    
-    <div style="text-align: left; padding-top: 10px;">
-        <label for="tougao_authorblog">您的博客:</label>
-        <input type="text" size="40" value="" id="tougao_authorblog" name="tougao_authorblog" />
-    </div>
-
-    <div style="text-align: left; padding-top: 10px;">
-        <label for="tougao_title">文章标题:*</label>
-        <input type="text" size="40" value="" id="tougao_title" name="tougao_title" />
-    </div>
-
-    <div style="text-align: left; padding-top: 10px;">
-        <label for="tougaocategorg">分类:*</label>
-        <?php wp_dropdown_categories('id=tougaocategorg&show_count=1&hierarchical=1'); ?>
-    </div>
-                    
-    <div style="text-align: left; padding-top: 10px;">
-        <label style="vertical-align:top" for="tougao_content">文章内容:*</label>
-        <textarea rows="15" cols="55" id="tougao_content" name="tougao_content"></textarea>
-    </div>
-                    
-    <br clear="all">
-    <div style="text-align: center; padding-top: 10px;">
+<?php
+/*
+Template Name: 投稿模板
+*/
+if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send'){
+    if ( isset($_COOKIE["tougao"]) && ( time() - $_COOKIE["tougao"] ) < 120 ){//这里的120是您限制多长时间内只能投稿一次
+        wp_die('您投稿也太勤快了吧，先歇会儿！');
+    }
+    //表单变量初始化
+    $name = isset( $_POST['tougao_authorname'] ) ? $_POST['tougao_authorname'] : '';
+    $email = isset( $_POST['tougao_authoremail'] ) ? $_POST['tougao_authoremail'] : '';
+    $blog = isset( $_POST['tougao_authorblog'] ) ? $_POST['tougao_authorblog'] : '';
+    $title = isset( $_POST['tougao_title'] ) ? $_POST['tougao_title'] : '';
+    $tags = isset( $_POST['tougao_tags'] ) ? $_POST['tougao_tags'] : '';
+    $category = isset( $_POST['cat'] ) ? (int)$_POST['cat'] : 0;
+    $content = isset( $_POST['tougao_content'] ) ? $_POST['tougao_content'] : '';
+    //表单项数据验证
+    if ( empty($name) || strlen($name) > 20 ){
+        wp_die('昵称必须填写，且不得超过20个长度');
+    }
+    if ( empty($email) || strlen($email) > 60 || !preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $email)){
+        wp_die('邮箱必须填写，且不得超过40个长度，必须符合 Email 格式');
+    }
+    if ( empty($title) || strlen($title) > 100 ){
+        wp_die('文章标题必须填写，且不得超过100个长度');
+    }
+    if ( empty($content) || strlen($content) < 20){
+        wp_die('内容必须填写，且不得少于20个长度');
+    }
+    $tougao = array(
+        'post_title' => $title,                //标题
+        'post_content' => $content,            //内容
+        'post_status' => 'pending',            //待审
+        'tags_input' => $tags,                //标签
+        'post_category' => array($category)    //分类
+    );
+    //将文章插入数据库
+    $status = wp_insert_post( $tougao );
+    if ($status != 0){
+    /*
+        //将自定义域写入最新待审文章
+        global $wpdb;
+        $myposts = $wpdb->get_results("
+            SELECT ID
+            FROM $wpdb->posts
+            WHERE post_status = 'pending'
+            AND post_type = 'post'
+            ORDER BY post_date DESC
+        ");
+        add_post_meta($myposts[0]->ID, 'cbs_postauthor', $name);    //插入投稿人昵称的自定义域
+        if ( !empty($blog)) add_post_meta($myposts[0]->ID, 'cbs_posturl', $blog);    //插入投稿人网址的自定义域
+    */
+        setcookie("tougao", time(), time()+180);
+        wp_die('投稿成功！','投稿成功！');
+    } else {
+        wp_die('投稿失败！','投稿失败！');
+    }
+<form id="tougaoform" method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+        <p><input id="author" type="text" size="40" value="" name="tougao_authorname" /><label>昵称（*必填）</label></p>
+        <p><input id="email" type="text" size="40" value="" name="tougao_authoremail" /><label>邮箱（*必填）</label></p>
+        <p><input id="url" type="text" size="40" value="" name="tougao_authorblog" /><label>您的博客/文章来源</label></p>
+        <p><input id="tougao_title" type="text" size="40" value="" name="tougao_title" /><label>文章标题（*必填）</label></p>
+        <p><input id="tags" type="text" size="40" value="" name="tougao_tags" /><label>文章标签（多个标签请用英文逗号 , 分开）</label></p>
+        <p><?php wp_dropdown_categories('show_option_none=请选择文章分类&show_count=1&hierarchical=1&hide_empty=0'); ?><label>文章分类（*必填）</label></p>
+        <textarea rows="15" cols="55" id="tougao" name="tougao_content"></textarea>
+        <p>
         <input type="hidden" value="send" name="tougao_form" />
-        <input type="submit" value="提交" />
-        <input type="reset" value="重填" />
-    </div>
+        <input id="submit" type="submit" value="提交" />
+        <input id="reset" type="reset" value="重填" />
+        </p>
 </form>
+?>
+	
+
 	<script src="./script/showFooter.js"></script>
 </body>
 </html>
