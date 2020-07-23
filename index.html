@@ -224,7 +224,28 @@
         distractionFreeMode:true
     });
     gitalk.render('gitalk-container');
-</script>   
+</script>  
+		
+		<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	const gitment = new Gitment({
+  id: 'kevinzhw153', // optional
+  owner: 'kevinzhw153',
+  repo: 'kevinzhw153.github.io',
+  oauth: {
+    client_id: '10ec16bec67b39db983f',
+    client_secret: '32fef06b36810c41d42295e65164847a79bb3061',
+  },
+  // ...
+  // For more available options, check out the documentation below
+})
+
+gitment.render('comments')
+// or
+// gitment.render(document.getElementById('comments'))
+// or
+// document.body.appendChild(gitment.render())
+		
 </div>
 	</div>
 	
@@ -303,18 +324,7 @@
 			<br/>
 			<br/>
 		</div>
-			<script>
-    <%
-        // 获取IP
-        String ip = request.getRemoteAddr();
- 
-        // 获取时间
-        String data = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date());
-    %>
-    <%-- 使用表达式语言进行输出 --%>
-    <h2>您的IP地址为：<%=ip%></h2>
-    <h2>本次访问时间：<%=data%></h2>
-</script>
+
 		<!--upd 0716 今日更新至此-->
 	</div>
 	</div>	
