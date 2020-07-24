@@ -13,3 +13,5 @@
 添加Google搜索
 ------1.1.1------
 添加Google Analytics
+------1.2.0------
+添加particles(重磅)
