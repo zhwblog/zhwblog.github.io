@@ -1,260 +1,194 @@
-
-<!DOCTYPE html>
-<html lang="zh-cn">
+<!DOCTYPE HTML>
+<html style="padding-bottom: 54px;">
 <head>
-<meta charset="UTF-8">
-<title>HTML5 Canvas圆盘抽奖应用DEMO演示</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>HTML5 Canvas圆盘抽奖应用</title>
+<meta name="description" content="HTML5 Canvas圆盘抽奖应用" />
+<meta name="keywords" content="html5抽奖，圆盘，圆盘抽奖,jquery,jquery插件" />
+<link rel="Shortcut icon" href="//www.jq22.com/favicon.ico" />
+<link href="css/demo.css?v4" rel="stylesheet" media="all" />
+<!--[if IE]>
+			
+			<style type="text/css">			
+				li.purchase a {
+					padding-top: 5px;
+					background-position: 0px -4px;
+				}
+				
+				li.remove_frame a {
+					padding-top: 5px;
+					background-position: 0px -3px;
+				}						
+			</style>
+			
+		<![endif]-->
+<style>
+        .fdad a{color:#000;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}.fdad{top:66px;}.xgcj li{font-size:14px;line-height:20px;list-style-type:none;transition:all 1s ease 0s;border-radius:5px;}.xgcj li:hover{background-color:#e4e4e4;}.xgcj{background-color:rgba(255,255,255,.3);overflow-x:hidden;}.xgcj ul{padding:10px}.xgcj h3{line-height:30px;}.xgcj p{padding-left:20px;font-size:13px;display:none;}.xgcj span{font-family:"宋体";}.xgcj li:hover p{display:block;}
+    </style>
+<script type="text/javascript">
+        var txt = "http://www.jq22.com/demo/html5-canvas-choujiang20160309";
+        window.g1 = txt.substr(0, 3);
+        window.g2 = txt.substr(0, 19);
+    </script>
+<script src="js/pace.min.js" charset="gbk"></script>
+<link href="css/pace-theme-barber-shop.css" rel="stylesheet" />
+<script src="https://libs.baidu.com/jquery/1.7.0/jquery.min.js"></script>
+<script src="js/jquery.qrcode.min.js"></script>
+<script type="text/javascript">
+        var dqfl = "其他";
+        var theme_list_open = false;
+
+        $(document).ready(function () {
+            function fixHeight() {
+                var headerHeight = $("#switcher").height();
+                $("#iframe").attr("height", $(window).height() - 54 + "px");
+            }
+            $(window).resize(function () {
+                fixHeight();
+            }).resize();
+
+            $('.icon-monitor').addClass('active');
+
+            $(".icon-mobile-3").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width-3');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-mobile-2").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width-2');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+               
+
+            $(".icon-mobile-1").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width');
+                $('.icon-tablet,.icon-mobile,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-tablet").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('tablet-width');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-monitor").click(function () {
+                $("#by").css("overflow-y", "hidden");
+                $('#iframe-wrap').removeClass().addClass('full-width');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            if (dqfl.indexOf("APP模板") != -1) {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width-2');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            }      
+        });
+    </script>
+<script type="text/javascript">
+        function Responsive($a) {
+            if ($a == true) $("#Device").css("opacity", "100");
+            if ($a == false) $("#Device").css("opacity", "0");
+            $('#iframe-wrap').removeClass().addClass('full-width');
+            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+            $(this).addClass('active');
+            return false;
+        };
+    </script>
+</head>
+<body id="by" style="overflow-y: hidden">
+<div id="switcher">
+<div class="center">
+<ul>
+<li class="logoTop" id="sj2"><a href="http://www.jq22.com/jquery-info6200">HTML5 Canvas圆盘抽奖应用</a></li>
+<div id="Device">
+<li class="device-monitor"><a href="javascript:">
+<div class="icon-monitor">
+</div>
+</a></li>
+<li class="device-mobile"><a href="javascript:">
+<div class="icon-tablet">
+</div>
+</a></li>
+<li class="device-mobile"><a href="javascript:">
+<div class="icon-mobile-1">
+</div>
+</a></li>
+<li class="device-mobile-2"><a href="javascript:">
+<div class="icon-mobile-2">
+</div>
+</a></li>
+<li class="device-mobile-3"><a href="javascript:">
+<div class="icon-mobile-3">
+</div>
+</a></li>
+</div>
+<li class="top2" id="sj"><a href="#">手机二维码预览</a><div class="vm">
+<div id="output"></div>
+<p style="color: #808080">扫一扫，直接在手机上打开</p>
+</div>
+</li>
 <script>
-	<div id="box">
-    <div id="header">
-      <span>停止位置:</span>
-      <input type="text" value="0" id="txt">
-    </div>
-    <div id="comment"><span>输入值的范围：0-7，默认停止位置：0</span></div>
-    <div id="main">
-      <div class="num"><img src="./xingyun.jpg" alt=""></div>
-      <div class="num"><img src="./xingyun.jpg" alt=""></div>
-      <div class="num"><img src="./xingyun.jpg" alt=""></div>
-      <div class="num"><img src="./xingyun.jpg" alt=""></div>
-      <div class="num" id="mid"><input type="button" value="抽奖" id="start"></div>
-      <div class="num"><img src="./xingyun.jpg" alt=""></div>
-      <div class="num"><img src="./xingyun.jpg" alt=""></div>
-      <div class="num"><img src="./xingyun.jpg" alt=""></div>
-      <div class="num"><img src="./xingyun.jpg" alt=""></div>
-    </div>
-  </div>
-	</script>
-	<style type="text/css">
- {
-      margin: 0;
-      padding: 0;
-    }
- 
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-    }
- 
-    #box {
-      width: 100%;
-      height: 100%;
-      background-color: silver;
-    }
- 
-    #header {
-      width: 600px;
-      height: 70px;
-      margin: 0 auto;
-      text-align: center;
-      padding-top: 30px;
-      background-color: aquamarine;
-      opacity: 0.65;
-    }
- 
-    #header span {
-      line-height: 35px;
-      font-size: 35px;
-      color: black;
-    }
- 
-    #header input {
-      height: 40px;
-      font-size: 35px;
-    }
-    #comment{
-      width: 600px;
-      height: 50px;
-      margin: 0 auto;
-      color: black;
-      background-color: aquamarine;
-      opacity: 0.65;
-      text-align: center;
-      font-size: 30px;
-    }
- 
-    #main {
-      width: 600px;
-      height: 600px;
-      margin: 0 auto;
-    }
- 
-    .num {
-      width: 200px;
-      height: 200px;
-      float: left;
-      opacity: 0.3;
-    }
- 
-    img {
-      width: 100%;
-      height: 100%;
-    }
- 
-    #mid {
-      opacity: 0.7;
-    }
- 
-    #mid input {
-      width: 100%;
-      height: 100%;
-      background-color: red;
-      font-size: 40px;
-      color: aliceblue;
-      }
-      </style>
-	<script>
-//定义一个定时器的句柄
-    var interval = null;
-    //定义点击开始以后，定时器执行的时间间隔
-    var inTime = 100;
-    //获取1-8的div
-    var divNum = document.getElementsByClassName('num');
-    //把获取到的数组重新排序，因为得到的divNum长度为9，但是最中间的那个“开始”盒子不需要，而且divL里面的class对象顺序不符合要求
-    var divList = [];
-    for (let i = 0; i < 3; i++) {
-      divList.push(divNum[i])
-    }
-    divList[3] = divNum[5];
-    divList[4] = divNum[8];
-    divList[5] = divNum[7];
-    divList[6] = divNum[6]
-    divList[7] = divNum[3];
- 
-    //自动转圈函数
-    function animation() {
-      var index = 0;
-      interval = setInterval(function () {
-        //divList[index].style.opacity = 1;注意,这句不能写在这里，因为在最后，index会等于8，但是divList数组最大下标为7
-        if (index > 7) {
-          index = 0;
-          divList[7].style.opacity = 0.5;
-        } else if (index != 0) {
-          divList[index - 1].style.opacity = 0.5;
-        }
-        //给盒子的透明度设置为1
-        divList[index].style.opacity = 1;
-        index++;
-      }, 1000)
-    }
-    //页面加载以后，先自动转圈
-    window.onload = animation;
- 
-    //为盒子里面的“开始”按钮注册点击事件
-    var inputStart = document.getElementById("start");
-    var valTxt = document.getElementById("txt");
-    inputStart.onclick = function () {
-      //首先判断用户输入的停止位置的值是否合乎格式，默认的位置为0
-      if (valTxt.value.length == 1 && parseInt(valTxt.value) >= 0 && parseInt(valTxt.value) <= 7) {
-        //禁用按钮
-        inputStart.disabled="disabled";
-        inputStart.value = "抽奖中..."
-        //取消页面加载以后设置的定时器（也就是取消自动转圈）
-        clearInterval(interval);
-        //先更改所有的盒子透明度
-        for (let i = 0; i < divList.length; i++) {
-          divList[i].style.opacity = 0.5;
-        }
-        //设置更快的定时器,时间间隔为inTime=0.1s
-        var index = 0;
-        interval = setInterval(function () {
-          //divList[index].style.opacity = 1;注意,这句不能写在这里，因为在最后，index会等于8，但是divList数组最大下标为7
-          if (index > 7) {
-            index = 0;
-            divList[7].style.opacity = 0.5;
-          } else if (index != 0) {
-            divList[index - 1].style.opacity = 0.5;
-          }
-          //给盒子的透明度设置为1
-          divList[index].style.opacity = 1;
-          index++;
-        }, inTime)
-        //快速转圈两秒以后，执行stop函数
-        //思考一个问题？两秒以后，快速转圈还会继续转吗？
-        //答案：会的，两秒后执行延时器里面的操作以后，还会继续执行定时器里面的操作
-        setTimeout(function () {
-          stop(parseInt(valTxt.value));
-        }, 2000)
- 
-      } else {
-        alert("尊敬的用户，请正确输入停止位置的值！");
-      }
-      //让转动停下来，接收的形参为停止位置的值
-      function stop(luckPosition) {
-        //清除定时器
-        clearInterval(interval)
-        //得到opacity为1的那个盒子的位置current
-        var current = -1;
-        for (let i = 0; i < divList.length; i++) {
-          if (divList[i].style.opacity == 1) {
-            current=i;
-          }
-        }
-        //注意：current+1
-        stopLuck(luckPosition,current+1,inTime,10)//inTime是点击“开始”以后，定时器执行的时间间隔，大小为100，也就是转圈的速度
-      }
-      //
-      function stopLuck(luckPosition,index,time,stepTime) {
-        //设置一个延时器，0.1s以后执行(传进来的time=100)
-        //思考一个问题，为什么这里也需要设置一个延时器，而且最开始时候，延迟时间time为传进来的inTime=100？答案在下面的注释中！
-        setTimeout(function () {
-          //重置opacity
-    //这里需要注意两个问题?
-    //第一个问题：不明白为什么这里需要重置opacity，因为在“开始”按钮注册点击事件里面的定时器函数语句会重置opacity，这里再重置
-        //是多此一举，其实这里重置opacity是为了在递归该函数时候，重置opacity
-    //第二个问题：第一次执行stopLuck函数的时候(也就是stop最开始调用stopLuck函数的时候)，index的值其实是
-        //比opacity为1的那个盒子下标大1，因为传进来的是：current+1，所以认为下面这种重置opacity的写法会导致错误,但是重点来了！
-        //这里是设置了一个延时器，并且第一次的延迟时间为time=inTime=0.1s，所以第一次执行stopLuck的时候,opacity为1的那个盒子其实
-        //已经继续转动一次，所以第一次执行stopLuck函数时候，下面这种写法没有错
-          if (index > 7) {
-            index = 0;
-            divList[7].style.opacity = 0.5;
-            
-          } else if (index != 0) {
-            divList[index - 1].style.opacity = 0.5
-          }
-          // 当前位置选中状态
-          divList[index].style.opacity  = 1;
-          // 如果说当前旋转时间太短， 或者当前位置不等于停止位置， 递归一下,直到旋转至停止位置
-          //(注意：第一次的延迟时间为time=inTime=0.1s)
-          if (time < 400 || index != luckPosition) {
-            //思考两个问题？
-            //第一个问题，如果index == luckPosition的话，会怎么样？
-    //因为time < 400，仍然也会执行这里，也就是说，即使当前位置等于停止位置也会执行这里，为了是使得速度先变慢。
-    //然后index会再++直到time>=400并且index==luckPosition不再执行这里。
-            //第二个问题，为什么越来越慢？
-    //在最开始的时候，time=100，stepTime=10，index为当前opacity为1盒子的下标，所以执行到这里,递归一下。time值和
-    //stepTime值变大,那么stopLuck()里面的延时器的延迟时间也会变长，从而使得转圈的速度变慢
-    //同时index++，延时器里面重置opacity的代码会重置opacity，从而达到转圈的效果
-            stepTime++;
-            time += stepTime;
-            index++;
-            stopLuck(luckPosition, index, time, stepTime);
-          } else {
-            //执行到这里说明当前位置等于停止位置
-            //设置一个延时器,为了使1s后显示结果
-            setTimeout(function () {
-    //这里我们后台手动设置中奖的位置是：1,也就是输入luckPosition的值为1时中奖，当然也可以设置中奖位置为负数，从而永远不中奖
-              if (luckPosition == 1 ) {
-                alert("恭喜中奖！")
-                //恢复按钮
-                inputStart.disabled=false;
-                inputStart.value = "抽奖";
-                animation();
-              } else {
-                alert("很遗憾，你没有中奖！")
-                 //恢复按钮
-                inputStart.disabled=false;
-                inputStart.value = "抽奖";
-                animation();
-              }
-            },1000)
- 
-          }
-        },time)
-       }
-      }
-</script>
+                    jQuery('#output').qrcode({ width: 150, height: 150, text: window.location.href });
+                </script>
+<li class="remove_frame" style="display:n"><a href="http://www.jq22.com/demo/html5-canvas-choujiang20160309" title="移除框架"></a></li>
+</ul>
+</div>
+</div>
+<div id="iframe-wrap">
+<iframe id="iframe" src="http://www.jq22.com/demo/html5-canvas-choujiang20160309" frameborder="0" width="100%"></iframe>
+</div>
+<div class="fdad">
+<div class="fdl">Advertisement</div>
+<div class="fdr">x</div>
+<div class="fdadnr">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-2935286260943234" data-ad-slot="6063645905"></ins>
+<script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+<div class="xgcj">
+<ul>
+<div style="width:100%">
+<div style="float:left"><h3>相关插件</h3></div>
+<div style="clear: left;"></div>
+ </div>
+</ul>
+</div>
+</div>
+<script type="text/javascript">
+                $(document).ready(function () {
+                    $(".fdr").click(function () {
+                        $(".fdad").hide();
+                    });
+                });
+    </script>
+<script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?b3a3fc356d0af38b811a0ef8d50716b8";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </body>
 </html>
