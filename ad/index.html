@@ -5,65 +5,256 @@
 <meta charset="UTF-8">
 <title>HTML5 Canvas圆盘抽奖应用DEMO演示</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="js/main.js">
+<script>
+	<div id="box">
+    <div id="header">
+      <span>停止位置:</span>
+      <input type="text" value="0" id="txt">
+    </div>
+    <div id="comment"><span>输入值的范围：0-7，默认停止位置：0</span></div>
+    <div id="main">
+      <div class="num"><img src="./xingyun.jpg" alt=""></div>
+      <div class="num"><img src="./xingyun.jpg" alt=""></div>
+      <div class="num"><img src="./xingyun.jpg" alt=""></div>
+      <div class="num"><img src="./xingyun.jpg" alt=""></div>
+      <div class="num" id="mid"><input type="button" value="抽奖" id="start"></div>
+      <div class="num"><img src="./xingyun.jpg" alt=""></div>
+      <div class="num"><img src="./xingyun.jpg" alt=""></div>
+      <div class="num"><img src="./xingyun.jpg" alt=""></div>
+      <div class="num"><img src="./xingyun.jpg" alt=""></div>
+    </div>
+  </div>
+	</script>
+	<style type="text/css">
+ {
+      margin: 0;
+      padding: 0;
+    }
+ 
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+ 
+    #box {
+      width: 100%;
+      height: 100%;
+      background-color: silver;
+    }
+ 
+    #header {
+      width: 600px;
+      height: 70px;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 30px;
+      background-color: aquamarine;
+      opacity: 0.65;
+    }
+ 
+    #header span {
+      line-height: 35px;
+      font-size: 35px;
+      color: black;
+    }
+ 
+    #header input {
+      height: 40px;
+      font-size: 35px;
+    }
+    #comment{
+      width: 600px;
+      height: 50px;
+      margin: 0 auto;
+      color: black;
+      background-color: aquamarine;
+      opacity: 0.65;
+      text-align: center;
+      font-size: 30px;
+    }
+ 
+    #main {
+      width: 600px;
+      height: 600px;
+      margin: 0 auto;
+    }
+ 
+    .num {
+      width: 200px;
+      height: 200px;
+      float: left;
+      opacity: 0.3;
+    }
+ 
+    img {
+      width: 100%;
+      height: 100%;
+    }
+ 
+    #mid {
+      opacity: 0.7;
+    }
+ 
+    #mid input {
+      width: 100%;
+      height: 100%;
+      background-color: red;
+      font-size: 40px;
+      color: aliceblue;
+      }
+      </style>
+	<script>
+//定义一个定时器的句柄
+    var interval = null;
+    //定义点击开始以后，定时器执行的时间间隔
+    var inTime = 100;
+    //获取1-8的div
+    var divNum = document.getElementsByClassName('num');
+    //把获取到的数组重新排序，因为得到的divNum长度为9，但是最中间的那个“开始”盒子不需要，而且divL里面的class对象顺序不符合要求
+    var divList = [];
+    for (let i = 0; i < 3; i++) {
+      divList.push(divNum[i])
+    }
+    divList[3] = divNum[5];
+    divList[4] = divNum[8];
+    divList[5] = divNum[7];
+    divList[6] = divNum[6]
+    divList[7] = divNum[3];
+ 
+    //自动转圈函数
+    function animation() {
+      var index = 0;
+      interval = setInterval(function () {
+        //divList[index].style.opacity = 1;注意,这句不能写在这里，因为在最后，index会等于8，但是divList数组最大下标为7
+        if (index > 7) {
+          index = 0;
+          divList[7].style.opacity = 0.5;
+        } else if (index != 0) {
+          divList[index - 1].style.opacity = 0.5;
+        }
+        //给盒子的透明度设置为1
+        divList[index].style.opacity = 1;
+        index++;
+      }, 1000)
+    }
+    //页面加载以后，先自动转圈
+    window.onload = animation;
+ 
+    //为盒子里面的“开始”按钮注册点击事件
+    var inputStart = document.getElementById("start");
+    var valTxt = document.getElementById("txt");
+    inputStart.onclick = function () {
+      //首先判断用户输入的停止位置的值是否合乎格式，默认的位置为0
+      if (valTxt.value.length == 1 && parseInt(valTxt.value) >= 0 && parseInt(valTxt.value) <= 7) {
+        //禁用按钮
+        inputStart.disabled="disabled";
+        inputStart.value = "抽奖中..."
+        //取消页面加载以后设置的定时器（也就是取消自动转圈）
+        clearInterval(interval);
+        //先更改所有的盒子透明度
+        for (let i = 0; i < divList.length; i++) {
+          divList[i].style.opacity = 0.5;
+        }
+        //设置更快的定时器,时间间隔为inTime=0.1s
+        var index = 0;
+        interval = setInterval(function () {
+          //divList[index].style.opacity = 1;注意,这句不能写在这里，因为在最后，index会等于8，但是divList数组最大下标为7
+          if (index > 7) {
+            index = 0;
+            divList[7].style.opacity = 0.5;
+          } else if (index != 0) {
+            divList[index - 1].style.opacity = 0.5;
+          }
+          //给盒子的透明度设置为1
+          divList[index].style.opacity = 1;
+          index++;
+        }, inTime)
+        //快速转圈两秒以后，执行stop函数
+        //思考一个问题？两秒以后，快速转圈还会继续转吗？
+        //答案：会的，两秒后执行延时器里面的操作以后，还会继续执行定时器里面的操作
+        setTimeout(function () {
+          stop(parseInt(valTxt.value));
+        }, 2000)
+ 
+      } else {
+        alert("尊敬的用户，请正确输入停止位置的值！");
+      }
+      //让转动停下来，接收的形参为停止位置的值
+      function stop(luckPosition) {
+        //清除定时器
+        clearInterval(interval)
+        //得到opacity为1的那个盒子的位置current
+        var current = -1;
+        for (let i = 0; i < divList.length; i++) {
+          if (divList[i].style.opacity == 1) {
+            current=i;
+          }
+        }
+        //注意：current+1
+        stopLuck(luckPosition,current+1,inTime,10)//inTime是点击“开始”以后，定时器执行的时间间隔，大小为100，也就是转圈的速度
+      }
+      //
+      function stopLuck(luckPosition,index,time,stepTime) {
+        //设置一个延时器，0.1s以后执行(传进来的time=100)
+        //思考一个问题，为什么这里也需要设置一个延时器，而且最开始时候，延迟时间time为传进来的inTime=100？答案在下面的注释中！
+        setTimeout(function () {
+          //重置opacity
+    //这里需要注意两个问题?
+    //第一个问题：不明白为什么这里需要重置opacity，因为在“开始”按钮注册点击事件里面的定时器函数语句会重置opacity，这里再重置
+        //是多此一举，其实这里重置opacity是为了在递归该函数时候，重置opacity
+    //第二个问题：第一次执行stopLuck函数的时候(也就是stop最开始调用stopLuck函数的时候)，index的值其实是
+        //比opacity为1的那个盒子下标大1，因为传进来的是：current+1，所以认为下面这种重置opacity的写法会导致错误,但是重点来了！
+        //这里是设置了一个延时器，并且第一次的延迟时间为time=inTime=0.1s，所以第一次执行stopLuck的时候,opacity为1的那个盒子其实
+        //已经继续转动一次，所以第一次执行stopLuck函数时候，下面这种写法没有错
+          if (index > 7) {
+            index = 0;
+            divList[7].style.opacity = 0.5;
+            
+          } else if (index != 0) {
+            divList[index - 1].style.opacity = 0.5
+          }
+          // 当前位置选中状态
+          divList[index].style.opacity  = 1;
+          // 如果说当前旋转时间太短， 或者当前位置不等于停止位置， 递归一下,直到旋转至停止位置
+          //(注意：第一次的延迟时间为time=inTime=0.1s)
+          if (time < 400 || index != luckPosition) {
+            //思考两个问题？
+            //第一个问题，如果index == luckPosition的话，会怎么样？
+    //因为time < 400，仍然也会执行这里，也就是说，即使当前位置等于停止位置也会执行这里，为了是使得速度先变慢。
+    //然后index会再++直到time>=400并且index==luckPosition不再执行这里。
+            //第二个问题，为什么越来越慢？
+    //在最开始的时候，time=100，stepTime=10，index为当前opacity为1盒子的下标，所以执行到这里,递归一下。time值和
+    //stepTime值变大,那么stopLuck()里面的延时器的延迟时间也会变长，从而使得转圈的速度变慢
+    //同时index++，延时器里面重置opacity的代码会重置opacity，从而达到转圈的效果
+            stepTime++;
+            time += stepTime;
+            index++;
+            stopLuck(luckPosition, index, time, stepTime);
+          } else {
+            //执行到这里说明当前位置等于停止位置
+            //设置一个延时器,为了使1s后显示结果
+            setTimeout(function () {
+    //这里我们后台手动设置中奖的位置是：1,也就是输入luckPosition的值为1时中奖，当然也可以设置中奖位置为负数，从而永远不中奖
+              if (luckPosition == 1 ) {
+                alert("恭喜中奖！")
+                //恢复按钮
+                inputStart.disabled=false;
+                inputStart.value = "抽奖";
+                animation();
+              } else {
+                alert("很遗憾，你没有中奖！")
+                 //恢复按钮
+                inputStart.disabled=false;
+                inputStart.value = "抽奖";
+                animation();
+              }
+            },1000)
+ 
+          }
+        },time)
+       }
+      }
 </script>
-</head>
-<body>
-<div class="turnplate_box">
-	<canvas id="myCanvas" width="300px" height="300px">抱歉！浏览器不支持。</canvas>
-	<canvas id="myCanvas01" width="200px" height="200px">抱歉！浏览器不支持。</canvas>
-	<canvas id="myCanvas03" width="200px" height="200px">抱歉！浏览器不支持。</canvas>
-	<canvas id="myCanvas02" width="150px" height="150px">抱歉！浏览器不支持。</canvas>
-	<button id="tupBtn" class="turnplatw_btn"></button>
-</div>
-<!-- 更改系统默认弹窗 -->
-<script type="text/javascript">
-window.alert = function(str)
-{
-	var shield = document.createElement("DIV");
-	shield.id = "shield";
-	shield.style.position = "absolute";
-	shield.style.left = "50%";
-	shield.style.top = "50%";
-	shield.style.width = "280px";
-	shield.style.height = "150px";
-	shield.style.marginLeft = "-140px";
-	shield.style.marginTop = "-110px";
-	shield.style.zIndex = "25";
-	var alertFram = document.createElement("DIV");
-	alertFram.id="alertFram";
-	alertFram.style.position = "absolute";
-	alertFram.style.width = "280px";
-	alertFram.style.height = "150px";
-	alertFram.style.left = "50%";
-	alertFram.style.top = "50%";
-	alertFram.style.marginLeft = "-140px";
-	alertFram.style.marginTop = "-110px";
-	alertFram.style.textAlign = "center";
-	alertFram.style.lineHeight = "150px";
-	alertFram.style.zIndex = "300";
-	strHtml = "<ul style=\"list-style:none;margin:0px;padding:0px;width:100%\">\n";
-	strHtml += " <li style=\"background:#626262;text-align:left;padding-left:20px;font-size:14px;font-weight:bold;height:25px;line-height:25px;border:1px solid #F9CADE;color:white\">[中奖提醒]</li>\n";
-	strHtml += " <li style=\"background:#787878;text-align:center;font-size:12px;height:95px;line-height:95px;border-left:1px solid #F9CADE;border-right:1px solid #F9CADE;color:#DCC722\">"+str+"</li>\n";
-	strHtml += " <li style=\"background:#626262;text-align:center;font-weight:bold;height:30px;line-height:25px; border:1px solid #F9CADE;\"><input type=\"button\" value=\"确 定\" onclick=\"doOk()\" style=\"width:80px;height:20px;background:#626262;color:white;border:1px solid white;font-size:14px;line-height:20px;outline:none;margin-top: 4px\"/></li>\n";
-	strHtml += "</ul>\n";
-	alertFram.innerHTML = strHtml;
-	document.body.appendChild(alertFram);
-	document.body.appendChild(shield);
-	this.doOk = function(){
-		alertFram.style.display = "none";
-		shield.style.display = "none";
-	}
-	alertFram.focus();
-	document.body.onselectstart = function(){return false;};
-}
-</script>
-
-<div style="text-align:center;clear:both;margin-top:50px">
-	<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
-	<script src="/follow.js" type="text/javascript"></script>
-</div>
 </body>
 </html>
