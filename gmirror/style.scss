@@ -1,0 +1,222 @@
+---
+---
+$blue: #4285f4;
+@mixin mobile {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+*{
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+header{
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  div{
+    -ms-flex: 1;
+        flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    border-top: 4px solid;
+    &:first-child{
+      border-top-color: red;
+    }
+    &:nth-of-type(2){
+      border-top-color: green;
+    }
+    &:last-child{
+      border-top-color: yellow;
+    }
+  }
+}
+.container {
+  margin: 0 auto ;
+  max-width: 500px;
+  text-align: center;
+  padding-bottom: 4em;
+  .logo{
+    @include mobile{
+      background: none;
+      font-size: 3em;
+      font-weight: bold;
+      min-height: 2em;
+    }
+    color: white;
+    min-height: 280px;
+    height: 20%;
+    background: transparent url(http://unblock-google.oss-cn-qingdao.aliyuncs.com/images/gfw.png) no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+  .search{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    input{
+      font-size: 1.2em;
+      -webkit-appearance: none;
+      border-radius: 0;
+      padding: 8px;
+      border: 1px solid rgba(200, 200, 200, .9);
+      outline: none;
+      font-weight: bold;
+      &[type=text]{
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        border-right: none;
+      }
+      &[type=button]{
+        background-color: $blue;
+        color: white;
+        cursor: pointer;
+        margin-left: -5px;
+        &[disabled]{
+          background-color: gray;
+          cursor: wait;
+        }
+      }
+    }
+    @include mobile{
+      display: block;
+      text-align: center;
+      input{
+        &[type=text]{
+          border: 1px solid $blue;
+          margin-bottom: 1em;
+        }
+        &[type=button]{
+            margin-left: 0;
+        }
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+
+  .status{
+    padding-top: 1em;
+    text-align: left;
+    .title{
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &.connecting{
+        color: tomato;
+        .reset{
+          display: none;
+        }
+      }
+      &.connected{
+        color: green;
+        .reset{
+          padding-left: 1em;
+        }
+      }
+      [ng-click]:hover,[ng-click]:active{
+        text-decoration: underline;
+      }
+    }
+    .detail{
+      list-style: none;
+      padding: 0;
+      letter-spacing: .2em;
+      font-family: monospace;
+
+      li{
+        padding-top: 1em;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        img{
+          display: none;
+        }
+        a{
+          text-decoration: none;
+        }
+        &:before{
+          width: 1.5em;
+          content: "\220E"
+        }
+        &.fast{
+          &:before{
+            color: green;
+          }
+        }
+        &.slow{
+          &:before{
+            color: yellow;
+          }
+        }
+        &.timeout{
+          text-decoration: line-through;
+          &:before{
+            color: gray;
+          }
+        }
+        span{
+
+          -webkit-flex: 1;
+
+              -ms-flex: 1;
+
+                  flex: 1;
+          &:last-of-type{
+            text-align: right;
+          }
+        }
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      &.hide{
+        height: 0;
+        overflow: hidden;
+      }
+    }
+    a:hover{
+      text-decoration: dashed;
+    }
+  }
+}
+
+footer{
+  @include mobile{
+    display: none;
+  }
+  background: #f2f2f2;
+  border-top: 1px solid #e4e4e4;
+  line-height: 40px;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  font-family: arial,sans-serif;
+  font-size: small;
+  padding: 0 5em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  a{
+    color: darkgrey;
+    text-decoration: none;
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    &:hover{
+      color: $blue;
+    }
+  }
+}
+
+.test-image{
+  height: 20px;
+}
