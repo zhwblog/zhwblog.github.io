@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    <meta name="author" content="yucc2008@gmail.com"/>
+    <meta name="description" content="google mirror site">
+    <!-- favor icon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/fav/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/fav/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/fav/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/fav/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/fav/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/fav/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/fav/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/fav/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="images/fav/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/fav/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="images/fav/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="images/fav/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="images/fav/manifest.json">
+    <link rel="shortcut icon" href="images/fav/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-TileImage" content="images/fav/mstile-144x144.png">
+    <meta name="msapplication-config" content="images/fav/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Google Luck</title>
+    <script type="text/javascript" src="http://unblock-google.oss-cn-qingdao.aliyuncs.com/scripts/angular.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+</head>
+
+<body ng-app="goApp">
+<header>
+    <div></div>
+    <div></div>
+    <div></div>
+</header>
+
+<main class="container" ng-controller="MainCtrl">
+    <div class="logo">GOOGLE LUCK</div>
+    <div class="search">
+        <input type="text" tabindex="1" autofocus="autofocus" enter="search()" ng-model="key" placeholder="Don't Be Evil"/>
+        <input type="button" ng-click="search()" value="Google Luck" ng-disabled="!google.connected" />
+    </div>
+
+    <div class="status">
+        <div class="title {{hostFound?'connected':'connecting'}}">
+            <span ng-click="toggleDetail()">{{hostFound ? "&#8766; Connection established" : "&#8987;&nbsp;Connecting to Google..."}}</span>
+            <span class="reset" ng-click="reset()">&#8634;&nbsp;reset</span>
+        </div>
+        <ul class="detail {{showDetail?'show':'hide'}}">
+            <li ng-repeat="mirror in mirrors | orderBy:'timecost'" class="{{mirror.status}}">
+                <span><a href="http://{{mirror.host}}" target="_blank">{{mirror.host}}</a></span>
+                <span>{{ mirror.timecost ? mirror.timecost+"ms" : mirror.status}}</span>
+                <image ng-src="{{mirror.testUrl}}" image-load="{{mirror.host}}"></image>
+            </li>
+        </ul>
+    </div>
+</main>
+<footer>
+    <a target="_blank" href="LICENSE">
+        &#169; 2015 &nbsp;
+    </a>
+    <a target="_blank" href="https://github.com/unblock/google">&#10084; GitHub</a>
+    <a target="_blank" href="about">&#43; About</a>
+</footer>
+
+<script src="http://unblock-google.oss-cn-qingdao.aliyuncs.com/scripts/app.js"></script>
+</body>
+</html>
