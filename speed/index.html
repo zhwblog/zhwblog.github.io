@@ -2,9 +2,10 @@
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
-<title>js实现的网速测试方法</title>
+<title>网速测试</title>
 </head>
 <body>
+ <p><strong>建议只测一次或清除浏览数据后重新测速</p></strong>
  <script>
         document.write("<div id='div1'>正在下载测速图片，请稍后...</div>");var szsrc = "https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png?id="+Math.round();
         var st = new Date();
@@ -20,5 +21,6 @@
           document.getElementById("div1").innerHTML = "您的下载速度为："+calcspeed+" (KB/秒)  带宽约" + Math.round(calcspeed/128*Lnum)/Lnum  + "M";
         }
 </script>
+
 </body>
 </html>
