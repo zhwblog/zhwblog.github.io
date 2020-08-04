@@ -20,3 +20,5 @@
 添加particles(重磅)
 # 1.2.1
 添加kevinzhw153.github.io/google/ （就是google镜像啦(小声)）
+# 1.3.0
+添加测速，抽奖效果
