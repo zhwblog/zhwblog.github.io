@@ -31,7 +31,7 @@ function Game(id,params){
     var _ = this;
     var settings = {
         width:960,						//画布宽度
-        height:480						//画布高度
+        height:640						//画布高度
     };
     Object.assign(_,settings,params);
     var $canvas = document.getElementById(id);
