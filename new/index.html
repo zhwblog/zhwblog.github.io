@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link type="text/css" rel="styleSheet" href="css/style.css" />
+	</head>
+	<body>
+		<div id="animat" class="animat"></div>
+	</body>
+	<script>
+	
+		 var animat = document.getElementById("animat");
+		 animat.style.width = window.innerWidth + "px";
+		 animat.style.height = window.innerHeight + "px";
+		 
+		 window.onresize = function(){
+			 animat.style.width = window.innerWidth + "px";
+			 animat.style.height = window.innerHeight + "px";
+		 }
+		 
+	</script>
+</html>
