@@ -9,7 +9,7 @@ $email = isset($_POST['email']) ? $_POST['email'] : "";
 $phone = isset($_POST['phone']) ? $_POST['phone'] : "";
 $address = isset($_POST['address']) ? $_POST['address'] : "";
 if ($password == $re_password) { //建立连接
-    $conn = mysqli_connect("localhost", "", "", "user"); //准备SQL语句,查询用户名
+    $conn = mysqli_connect("localhost", "username", "zhw15300", "user"); //准备SQL语句,查询用户名
     $sql_select = "SELECT username FROM usertext WHERE username = '$username'"; //执行SQL语句
     $ret = mysqli_query($conn, $sql_select);
     $row = mysqli_fetch_array($ret); //判断用户名是否已存在
