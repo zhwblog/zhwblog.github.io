@@ -49,6 +49,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 	<link rel="import" href="./time/index.html" id="page1">
 	
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+		}
+		.tip-wrap{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1;
+		}
+		.tip-wrap_text{
+			width: 80%;
+			padding: 8px 16px;
+			margin: 10px 0;
+			border-radius: 4px;
+			text-align: center;
+			background-color: #fef0f0;
+			color: #f56c6c;
+		}
+		.tip-content a{
+			display: inline-block;
+			padding: 6px 10px;
+			margin-right: 15px;
+			font-weight: 500;
+			color: #fff;
+			background-color: #409eff;
+			border-color: #409eff;
+			border-radius: 4px;
+		}
+	</style>
+	<script src="./js/circle.js"></script>
+<script src="./js/ball.js"></script>
+<script src="./js/index.js"></script>
+<script>
+	new TabParticles()
+</script>
+	
         <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
         <style>
             #menu ul 
