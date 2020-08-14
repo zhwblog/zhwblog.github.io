@@ -1,7 +1,7 @@
 var datas = [
-	"./game3/image/explosion.png",
-	"./game3/image/plasma.png",
-	"./game3/image/ship.png"
+	"../game3/image/explosion.png",
+	"../game3/image/plasma.png",
+	"../game3/image/ship.png"
 ]
 
 var explosionCells = [
