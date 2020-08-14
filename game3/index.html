@@ -161,9 +161,9 @@
       <div id="missle">子弹使用情况(已使用/缓存量)：</div>
     </div>
   </div>
-  <script src="js/data.js"></script>
-  <script src="js/loading.js"></script>
-  <script src="js/allSprite.js"></script>
+  <script src="./game3/js/data.js"></script>
+  <script src="./game3/js/loading.js"></script>
+  <script src="./game3/js/allSprite.js"></script>
   <script>
     var canvas = document.getElementById("cas");
     canvas.height = window.innerHeight;
@@ -370,7 +370,7 @@
 
         for (var i = 0; i < badPlanNum; i++) {
           var img = new Image();
-          img.src = "image/explosion.png";
+          img.src = "./game3/image/explosion.png";
           var boom = new Sprite("boom", new SpriteSheetPainter(explosionCells, false, function() {
             this.visible = false;
           }, img));
