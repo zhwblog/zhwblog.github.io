@@ -23,3 +23,5 @@
 添加测速，抽奖效果
 # 2.0.0
 添加时间(kevinzhw153.github.io/time)、接水管游戏(kevinzhw153.github.io/connectPipe/easyPipe.html)、桌球游戏(kevinzhw153.github.io/game1/)
+# 2.2.0
+添加飞机游戏(kevinzhw153.github.io/game3/)
