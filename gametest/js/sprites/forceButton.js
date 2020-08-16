@@ -1,14 +1,3 @@
-/**
- * @file 力度按钮
- * @author BenzLeung(https://github.com/BenzLeung)
- * @date 2017/2/25
- * @class ForceButton
- * Created by JetBrains PhpStorm.
- *
- * 每位工程师都有保持代码优雅的义务
- * each engineer has a duty to keep the code elegant
- */
-
 define(['cocos', 'i18n/i18n'], function (cc, i18n) {
     return cc.ControlButton.extend({
         ctor: function () {
