@@ -1,10 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>显示来访用户的IP及其地区</title>       
-    </head>
-    <body>
-         <script type="text/javascript" src="http://ip.chinaz.com/getip.aspx"></script>
-    </body>
+<head>
+<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+<title>网速测试</title>
+<small><a href="https://kevinzhw153.github.io/">主页</a></small>
+<body>
+<script type="text/javascript" src="http://ip.chinaz.com/getip.aspx"></script>    
+    // gitalk的主要参数
+        clientID: '10ec16bec67b39db983f',
+        clientSecret: '32fef06b36810c41d42295e65164847a79bb3061',
+        repo: 'kevinzhw153.github.io',
+        owner: 'kevinzhw153',
+        admin: ['kevinzhw153'],
+        id:window.location.pathname,
+        distractionFreeMode:true
+    });
+    gitalk.render('gitalk-container');
+</script> 
+         
+</body>
 </html>
