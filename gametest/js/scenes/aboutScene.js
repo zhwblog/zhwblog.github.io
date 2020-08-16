@@ -1,12 +1,3 @@
-/**
- * @file 关于游戏
- * @author BenzLeung(https://github.com/BenzLeung)
- * @date 2017/2/7
- * Created by JetBrains PhpStorm.
- *
- * 每位工程师都有保持代码优雅的义务
- * each engineer has a duty to keep the code elegant
- */
 
 define(
     [
@@ -44,13 +35,13 @@ define(
                 var benzLeung = new cc.LabelTTF(i18n('访问我的 Github'), i18n.defaultFont, MENU_FONT_SIZE);
                 benzLeung.setColor(MENU_COLOR);
                 var benzLeungMenuItem = new cc.MenuItemLabel(benzLeung, function () {
-                    window.open('https://github.com/BenzLeung');
+                    window.open('https://www.github.com/kevinzhw153');
                 });
 
                 var site = new cc.LabelTTF(i18n('访问项目主页'), i18n.defaultFont, MENU_FONT_SIZE);
                 site.setColor(MENU_COLOR);
                 var siteMenuItem = new cc.MenuItemLabel(site, function () {
-                    window.open('https://github.com/BenzLeung/funny-billards');
+                    window.open('https://github.com/keivnzhw153/keivnzhw153.github.io/gametest/');
                 });
 
                 var goBack = new cc.LabelTTF(i18n('<< 返回'), i18n.defaultFont, MENU_FONT_SIZE);
