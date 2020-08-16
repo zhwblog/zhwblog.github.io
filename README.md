@@ -1,5 +1,5 @@
 [我的blog](https://kevinzhw153.github.io)
-本blog遵守MIT license [这里](https://github.com/kevinzhw153/kevinzhw153.github.io/LICENSE-ZH.md)
+本blog遵守MIT license [这里](https://github.com/kevinzhw153/kevinzhw153.github.io/blob/master/LICENSE-ZH.md)
 # 1.0.1
 创建网页
 # 1.0.2
