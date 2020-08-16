@@ -1,16 +1,3 @@
-/**
- * @file 一个简单的声音引擎，基于 Web Audio API
- * @author BenzLeung(https://github.com/BenzLeung)
- * @date 2017/3/9
- * @license MIT
- * @version 0.0.10
- * @class benzAudioEngine
- * Created by JetBrains PhpStorm.
- *
- * 每位工程师都有保持代码优雅的义务
- * each engineer has a duty to keep the code elegant
- */
-
 (function () {
     var AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
     var benzAudioEngine;
