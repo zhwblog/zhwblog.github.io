@@ -22,9 +22,9 @@ define(
                 var menu = new StartMenu();
                 this.fixedLayer.addChild(menu, 5);
 
-                var benzLeung = new cc.LabelTTF('©kevin (https://github.com/kevinzhw153)', 'Tahoma', 45);
-                benzLeung.setColor(new cc.Color(128, 128, 128, 1));
-                benzLeung.setPosition(cc.visibleRect.width / 2, 60);
+                var kevin = new cc.LabelTTF('©kevin (https://github.com/kevinzhw153)', 'Tahoma', 45);
+                kevin.setColor(new cc.Color(128, 128, 128, 1));
+                kevin.setPosition(cc.visibleRect.width / 2, 60);
                 this.fixedLayer.addChild(benzLeung, 3);
             }
         });
