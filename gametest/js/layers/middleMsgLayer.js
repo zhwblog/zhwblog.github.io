@@ -1,14 +1,3 @@
-/**
- * @file 游戏中的提示信息
- * @author BenzLeung(https://github.com/BenzLeung)
- * @date 2017/2/26
- * @class MiddleMsgLayer
- * Created by JetBrains PhpStorm.
- *
- * 每位工程师都有保持代码优雅的义务
- * each engineer has a duty to keep the code elegant
- */
-
 define(['cocos', 'i18n/i18n'], function (cc, i18n) {
     return cc.Layer.extend({
         ctor :function () {
