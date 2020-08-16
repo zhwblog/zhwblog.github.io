@@ -1,14 +1,3 @@
-/**
- * @file 游戏标题
- * @author BenzLeung(https://github.com/BenzLeung)
- * @date 2017/3/5
- * @class TitleScene
- * Created by JetBrains PhpStorm.
- *
- * 每位工程师都有保持代码优雅的义务
- * each engineer has a duty to keep the code elegant
- */
-
 define(
     [
         'cocos',
@@ -33,7 +22,7 @@ define(
                 var menu = new StartMenu();
                 this.fixedLayer.addChild(menu, 5);
 
-                var benzLeung = new cc.LabelTTF('©Benz Leung (https://github.com/BenzLeung)', 'Tahoma', 45);
+                var benzLeung = new cc.LabelTTF('©kevin (https://github.com/kevinzhw153)', 'Tahoma', 45);
                 benzLeung.setColor(new cc.Color(128, 128, 128, 1));
                 benzLeung.setPosition(cc.visibleRect.width / 2, 60);
                 this.fixedLayer.addChild(benzLeung, 3);
