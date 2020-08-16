@@ -41,7 +41,7 @@ define(
                 var site = new cc.LabelTTF(i18n('访问项目主页'), i18n.defaultFont, MENU_FONT_SIZE);
                 site.setColor(MENU_COLOR);
                 var siteMenuItem = new cc.MenuItemLabel(site, function () {
-                    window.open('https://github.com/keivnzhw153/keivnzhw153.github.io/gametest/');
+                    window.open('https://github.com/kevinzhw153/kevinzhw153.github.io/gametest/');
                 });
 
                 var goBack = new cc.LabelTTF(i18n('<< 返回'), i18n.defaultFont, MENU_FONT_SIZE);
