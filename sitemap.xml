@@ -1,5 +1,5 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!--  Created By http://www.zhetao.com/sitemapcreator,  URLs: 15 Generated at: 2020-08-06 10:19:36  -->
+<!--  Created By http://www.zhetao.com/sitemapcreator,  URLs: 17(forget) Generated at: 2020-08-06 10:19:36  -->
 <url>
 <loc>https://kevinzhw153.github.io/</loc>
 <priority>1.00</priority>
@@ -34,15 +34,15 @@
 </url>
 <url>
 <loc>https://kevinzhw153.github.io/index.html</loc>
-<priority>0.83</priority>
+<priority>1.00</priority>
 </url>
 <url>
 <loc>https://kevinzhw153.github.io/blog/article/cva58</loc>
-<priority>0.74</priority>
+<priority>1.00</priority>
 </url>
 <url>
 <loc>https://kevinzhw153.github.io/blog/article/nsbd</loc>
-<priority>0.74</priority>
+<priority>1.00</priority>
 </url>
 <url>
 <loc>https://kevinzhw153.github.io/speed</loc>
@@ -54,10 +54,6 @@
 </url>
 <url>
 <loc>https://kevinzhw153.github.io/blog/article/blog-v4-test/index.html</loc>
-<priority>0.71</priority>
-</url>
-<url>
-<loc>https://kevinzhw153.github.io/blog/article/F35</loc>
 <priority>0.71</priority>
 </url>
 <url>
