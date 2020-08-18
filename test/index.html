@@ -1,14 +1,57 @@
 <!DOCTYPE html>
-<html class="client-nojs" lang="zh-Hans-CN" dir="ltr">
-<head>
-<meta charset="UTF-8"/>
-<title>F-22猛禽战斗机 - 维基百科，自由的百科全书</title>
-<body>
-	<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"3825ece8-a163-40a3-93d6-706d9505ff14","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"F-22猛禽戰鬥機","wgTitle":"F-22猛禽戰鬥機","wgCurRevisionId":60855733,"wgRevisionId":60855733,"wgArticleId":111206,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Webarchive模板wayback链接","CS1英语来源 (en)","含有英語的條目","包含GND标识符的维基百科条目","包含LCCN标识符的维基百科条目","美國戰鬥機","隱形戰機","雙發噴射機","洛克希德·马丁飞机"],"wgPageContentLanguage":"zh-cn","wgPageContentModel":"wikitext",
-"wgRelevantPageName":"F-22猛禽戰鬥機","wgRelevantArticleId":111206,"wgUserVariant":"zh-cn","wgIsProbablyEditable":!0,"wgRelevantPageIsProbablyEditable":!0,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgPopupsReferencePreviews":!1,"wgPopupsConflictsWithNavPopupGadget":!1,"wgVisualEditor":{"pageLanguageCode":"zh","pageLanguageDir":"ltr","pageVariantFallbacks":["zh-hans","zh-sg","zh-my"]},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!0},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"中文（中国大陆）‎","wgNoticeProject":"wikipedia","wgCentralAuthMobileDomain":!1,"wgEditSubmitButtonLabelPublish":!0,"wgULSPosition":"interlanguage","wgWikibaseItemId":"Q133324"};RLSTATE={"ext.gadget.hideConversionTab":"ready","ext.gadget.large-font":"ready","ext.globalCssJs.user.styles":"ready","site.styles":"ready","noscript":"ready","user.styles"
-:"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","mediawiki.page.gallery.styles":"ready","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","wikibase.client.init":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.gadget.edit0","ext.gadget.Edittools-refToolbar","ext.gadget.WikiMiniAtlas","ext.gadget.ReferenceTooltips","ext.gadget.UnihanTooltips","ext.gadget.variant-link-fix","ext.gadget.FixedTopBottomLink","ext.gadget.confirm-logout","ext.gadget.shortURL","ext.gadget.AdvancedSiteNotices","ext.gadget.internalLinkHelper-altcolor","ext.gadget.noteTA","ext.gadget.noteTAvector","ext.gadget.NavFrame","ext.gadget.collapsibleTables","ext.gadget.notifyConversion","ext.centralauth.centralautologin",
-"mmv.head","mmv.bootstrap.autostart","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.centralNotice.geoIP","ext.centralNotice.startUp"];</script>
-<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"language":"zh-cn","variant":"zh-cn"});
-});});</script>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table tr th,table tr td{
+				padding: 10px;
+			}
+			table{
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<input type="text" name="" id="input" value="" placeholder="请输入查询关键字" />
+		<input type="button" name="" id="search" value="搜索" />
+		<ul id="list">
+			<li>哈哈哈</li>
+			<li>啦啦啦</li>
+			<li>六六六</li>
+			<li>biubiu</li>
+			<li>噗噗噗</li>
+		</ul>
+	</body>
+</html>
+&emsp;&emsp;<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	// 实时监听筛选
+	var text = "";  
+	setInterval(function(){  
+	    text = $('#input').val();//获取文本框输入  
+	    if($.trim(text) != ""){  
+	            $("#list li").hide().filter(":contains('"+text+"')").show();  
+	    }else{  
+	        $('#list tr').show();//当删除文本框的内容时，又重新显示表格所有内容  
+	    }  
+	},100);  
+	
+	//通过点击按钮开始筛选  
+	$(function() {
+		$('#search').click(function() {
+			var text = $('#input').val(); //获取文本框输入  
+			if($.trim(text) != "") {
+				$("#table tr:not('#theader')").hide().filter(":contains('" + text + "')").show();
+			}
+		})
+	});
+</script>
 </body>
-	</html>
+</html>
+
+作者：_代码诗人_
+链接：https://juejin.im/post/6844903843902259208
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
