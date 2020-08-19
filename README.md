@@ -25,3 +25,5 @@
 添加时间(kevinzhw153.github.io/time)、接水管游戏(kevinzhw153.github.io/connectPipe/easyPipe.html)、桌球游戏(kevinzhw153.github.io/game1/)
 # 2.2.0
 添加飞机游戏(kevinzhw153.github.io/game3/)
+# 2.3.0
+添加DaoVoice(试运行)
