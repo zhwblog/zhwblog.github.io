@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="../style/allcss-v4.css">
 	<link rel="stylesheet" type="text/css" href="../style/divcss-v4.css">
 	<link rel="stylesheet" type="text/css" href="../style/decocss-v4.css">
+	<script src="../script/blog.js"></script>
 	<!-- font-awesome 图标库-->
 	<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
 		        	   <script async src="https://cse.google.com/cse.js?cx=017814980032632389432:cyscyjno-bg"></script>
@@ -112,6 +113,7 @@
 	<script>
 		function ssearch()
 		{
+			hideTag()
 			var names=document.getElementsByName("tt")
 			var key=document.getElementById("searchT").value
 			for(i=0;i<names.length;i++)
@@ -120,6 +122,15 @@
 				{
 					document.getElementById((i+1).toString()).style="display:none;"
 				}
+			}
+		}
+		function showAll()
+		{
+			showTag()
+			var names=document.getElementsByName("tt")
+			for(i=0;i<names.length;i++)
+			{
+				document.getElementById((i+1).toString()).style=""
 			}
 		}
 	</script>
@@ -160,6 +171,12 @@
 		<h2 class="center"><i class="fa fa-tags"></i> 全部标签</h2>
 		</div>
 		<div id="sideall">
+			<div id="blog" style="margin-top:0px;margin-left:0px;margin-right:0px;text-align:center;">
+				<input type="text" placeholder="输入要查找的关键字" id="searchT" style="width:50%;"><button class="newButton" onclick="ssearch()"><i class="fa fa-search" style="padding-right:0px;margin-right:0px;"></i></button><button class="newButton" onclick="showAll()"><i class="fa fa-arrow-circle-o-left" style="padding-right:0px;margin-right:0px;"></i></button>
+				</div>
+			<div id="blog" style="margin-top:0px;margin-left:0px;margin-right:0px;text-align:center;">
+				<button class="newButton" onclick="hideTag()">隐藏标签</button><button class="newButton" onclick="showTag()">显示标签</button>
+				</div>
 				<div id="divlist">
 
 					<div class="item">
@@ -226,9 +243,11 @@
 				<div id="blog">
 					<a name="aboutme"><h2 class="center"><i class="fa fa-tag"></i> 维基</h2></a>
 				</div>
+				<div id="1">
 				<a href="./article/F35">
+					
 	<div class="blogItem">
-	<span class="h">F35</span>
+	<span class="h" name="tt">F35</span>
 	<br/>
 	<br/>
 	<small><i class="fa fa-tag"></i> 军事 | 维基&nbsp;&nbsp;<i class="fa fa-book"></i> 军事&nbsp;&nbsp;<i class="fa fa-clock-o"></i> 2020-03-01 08:00&nbsp;&nbsp;<i class="fa fa-check-square-o"></i> 2020-03-01 08:00&nbsp;&nbsp;<i class="fa fa-file"></i> Text</small>
@@ -237,9 +256,11 @@
 	<span>简介</span>
 	</div>
 	</a>
+					</div>
+				<div id="2">
 	<a href="./article/norfolk">
 		<div class="blogItem">
-		<span class="h">诺福克海军基地</span>
+		<span class="h" name="tt">诺福克海军基地</span>
 		<br/>
 		<br/>
 		<small><i class="fa fa-tag"></i> 军事&nbsp;&nbsp;<i class="fa fa-book"></i> 维基 | zh&nbsp;&nbsp;<i class="fa fa-clock-o"></i> 2020-07-16 11:18&nbsp;&nbsp;<i class="fa fa-check-square-o"></i> 2020-07-16 11:18&nbsp;&nbsp;<i class="fa fa-file"></i> Text</small>
@@ -248,12 +269,14 @@
 		<span>全球最大海军基地</span>
 		</div>
 		</a>
+				</div>
 	<div id="blog">
 		<a name="develop"><h2 class="center"><i class="fa fa-tag"></i> 百科</h2></a>
 	</div>
+				<div id="3">
 	<a href="./article/cva58">
 <div class="blogItem">
-<span class="h">CVA-58</span>
+<span class="h" name="tt">CVA-58</span>
 <br/>
 <br/>
 <small><i class="fa fa-tag"></i> 百科&nbsp;&nbsp;<i class="fa fa-book"></i> &nbsp;&nbsp;<i class="fa fa-clock-o"></i> 2020-07-17 8:44&nbsp;&nbsp;<i class="fa fa-check-square-o"></i> 2020-07-17 8:44&nbsp;&nbsp;<i class="fa fa-file"></i> [none]</small>
@@ -262,9 +285,11 @@
 <span>一艘神奇的航母</span>
 </div>
 </a>
+				</div>
+				<div id="4">
 				<a href="./article/nsbd">
 	<div class="blogItem">
-	<span class="h">南水北调之中线工程</span>
+	<span class="h" name="tt">南水北调之中线工程</span>
 	<br/>
 	<br/>
 	<small><i class="fa fa-tag"></i> 其他&nbsp;&nbsp;<i class="fa fa-book"></i> 其他&nbsp;&nbsp;<i class="fa fa-clock-o"></i> 2020-07-17 14:18&nbsp;&nbsp;<i class="fa fa-check-square-o"></i> 2020-07-17 14:18&nbsp;&nbsp;<i class="fa fa-file"></i> 【none】</small>
@@ -273,6 +298,8 @@
 	<span>简介</span>
 	</div>
 	</a>
+				</div>
+				<div id="5">
 				<a href="./oinews/2/index.html">
 	<div class="blogItem">
 	<span class="h">#2. 维基</span>
@@ -284,14 +311,15 @@
 	<span>无</span>
 	</div>
 	</a>
-
+		</div>
 	
 	<div id="blog">
 					<a name="other"><h2 class="center"><i class="fa fa-tag"></i> 其它</h2></a>
 				</div>
+				<div id="6">
 				<a href="./article/blog-v4-test/index.html">
 	<div class="blogItem">
-	<span class="h">新版博客测试</span>
+	<span class="h" name="tt">新版博客测试</span>
 	<br/>
 	<br/>
 					<small><i class="fa fa-tag"></i> 测试&nbsp;&nbsp;<i class="fa fa-book"></i> 其它&nbsp;&nbsp;<i class="fa fa-clock-o"></i> 2020-05-16 14:32&nbsp;&nbsp;<i class="fa fa-check-square-o"></i> 2020-05-16 14:32&nbsp;&nbsp;<i class="fa fa-file"></i> C++</small>
@@ -300,6 +328,7 @@
 	<span>快来看看新版博客长什么样吧！</span>
 	</div>
 	</a>
+				</div>
 				
 			</div>
 		</div>
