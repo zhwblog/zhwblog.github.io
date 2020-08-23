@@ -44,30 +44,76 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'UA-173251435-1');
 </script>
-			<script>
-							let wrap = document.querySelector('.wrap');
-let innerHTML = wrap.innerHTML;
-let reg = new RegExp(query, 'g');
-innerHTML = innerHTML.replace(reg, '<span style="color: #000; background-color: #e3e4e5">' + query + '</span>');
-wrap.innerHTML = innerHTML;
-	let preQuery = ''; // 上一次搜索的内容
-let wrapDom = ''; // 搜索区域的dom元素
-function searchFn(dom, query) {
-    let wrap = wrapDom || document.querySelector(dom);
-    let innerHTML = wrap.innerHTML;
-    if (!preQuery) {
-        let preReg = new RegExp('<span style="color: #000; background-color: #e3e4e5">' + preQuery + '</span>', 'g');
-        innerHTML = innerHTML.replace(preReg, preQuery);
-    }
-    if (query) {
-        let reg = new RegExp(query, 'g');
-        innerHTML = innerHTML.replace(reg, '<span style="color: #000; background-color: #e3e4e5">' + query + '</span>');
-    }
-    wrap.innerHTML = innerHTML;
-    preQuery = query;
+				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="搜索...">
+ 
+<ul id="myUL">
+  <li><a href="#" class="header"></a></li>
+  <li><a href="https://kevinzhw153.github.io/blog/article/F35"f35</a></li>
+  <li><a href="https://kevinzhw153.github.io/blog/article/cva58">cva58</a></li>
+ 
+  <li><a href="#" class="header"></a></li>
+  <li><a href="https://kevinzhw153.github.io/blog/article/nsbd">南水北调中线</a></li>
+  <li><a href="https://kevinzhw153.github.io/blog/article/norfolk">诺福克海军基地</a></li>
+ </ul>	
+<style>
+	#myInput {
+    background-image: url('https://static.runoob.com/images/mix/searchicon.png'); /* 搜索按钮 */
+    background-position: 10px 12px; /* 定位搜索按钮 */
+    background-repeat: no-repeat; /* 不重复图片*/
+    width: 100%; 
+    font-size: 16px; /* 加大字体 */
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid #ddd; 
+    margin-bottom: 12px; 
 }
-	      									      </script>
-	
+ 
+#myUL {
+    /* 移除默认的列表样式 */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ 
+#myUL li a {
+    border: 1px solid #ddd; /* 链接添加边框 */
+    margin-top: -1px; 
+    background-color: #f6f6f6; 
+    padding: 12px; 
+    text-decoration: none;
+    font-size: 18px; 
+    color: black; 
+    display: block; 
+}
+ 
+#myUL li a.header {
+    background-color: #e2e2e2; 
+    cursor: default; 
+}
+ 
+#myUL li a:hover:not(.header) {
+    background-color: #eee;
+}
+	</style>
+<script>
+	function myFunction() {
+    // 声明变量
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+ 
+    // 循环所有列表，查找匹配项
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}							  
+</script>								  
 	<script src="./src.html"></script>
         <link rel="icon" type="image/ico" href="./img/!icon-bird.ico"/>	
   
