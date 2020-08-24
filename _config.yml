@@ -4,7 +4,7 @@ email: kevinzhw153@126.com
 description: > # this means to ignore newlines until "baseurl:"
   Kevin的博客
 baseurl: "" #	 the subpath of your site, e.g. /blog/
-url: http://kevinzhw153.github.io/
+url: http://kevinzhw153.github.io
 rss_url: 
 author: Kevin
 
