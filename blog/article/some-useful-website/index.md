@@ -1,96 +1,10 @@
-<style>
-  body
-{
-	margin-left:3px;
-	margin-right:3px;
-	margin-top:0px;
-	margin-bottom:1px;
-	border-style:none;
-	outline-style:none;
-	padding-left:0em;
-	padding-right:0em;
-	padding-bottom:0em;
-	padding-top:0em;
-	background-color:rgb(82,82,82)/*#000000*/;
-}
-div
-{
-	margin-left:1px;
-	margin-right:1px;
-	margin-top:0px;
-	margin-bottom:1px;
-	border-style:none;
-	outline-style:none;
-	padding-left:0em;
-	padding-right:0em;
-	padding-bottom:0em;
-	padding-top:0em;
-}
-/*普通段落*/
-p
-{
-	line-height:125%;
-	text-decoration:none;
-	text-indent:25px;
-}
-/*粗体*/
-strong
-{
-	line-height:120%;
-	text-indent:25px;
-}
-/*链接*/
-a
-{
-	text-decoration:none;
-}
-a:link
-{
-	color:#F2AF82;
-}
-a:visited
-{
-	color:#3399FF;
-}
-a:hover
-{
-	color:#00CCFF;
-}
-a:active
-{
-	color:#34FFFF;
-}
-h1
-{
-	text-align:center;
-}
-code
-{
-	font-family:Consolas,Courier;
-}
-pre
-{
-	background-color:rgba(0,0,0,.70);
-	font-family:Consolas,Courier;
-	color:white;
-}
-input
-{
-	font-size:18px;
-	background-color:rgba(250,250,250,.90);
-	border:2px solid rgb(33,133,208);
-	border-radius:.25rem;
-	padding:10px;
-	margin:7.5px;
-}
-input:hover
-{
-	border:3.5px solid rgb(33,133,208);
-}
-  </style>
 # 视频网站
 ```
 1. Youtube(需要某些操作)[www.youtube.com](官网)
 2. BiliBili[www.bilibili.com](官网)
 3. netflix[www.netflix.com](官网)
+```
+# 搜索引擎
+```
+1.google(需要某些操作)
 ```
