@@ -27,3 +27,6 @@
 添加飞机游戏(kevinzhw153.github.io/game3/)
 # 2.3.0
 添加DaoVoice(试运行)
+# 2.4.0
+迁移至新博客
+旧博客某些功能无法使用如：gitalk
